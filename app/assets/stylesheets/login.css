@@ -5,40 +5,55 @@ html {
 }
 h1 {
   font-family: 'Oleo Script', cursive;
+  text-align: center;
+  font-size: 40px;
 }
 
 .login-form-container {
-  background-color: #ffffff;
-  width: 400px;
-  /* box-sizing: border-box; */
+  background-color: #fafafa;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form-image {
+  width: 425px;
+  margin: 5px;
 }
 
 .login-form-box {
   border: 1px solid #f0f0f0;
-   display: flex;
+  display: flex;
   flex-direction: column;
-  /* box-sizing: border-box; */
+  margin: 5px;
+  height: 500px;
+  background-color: #ffffff;
 }
 
 .login-form {
-  height: 24px;
   padding: 5px;
   margin: 20px auto 0;
   display: flex;
+  width: 340px;
   flex-direction: column;
-  /* box-sizing: border-box */
 }
 
 .login-input {
-  /* display: block; */
+  background-color: #fafafa;
+  margin: 5px;
+  border: 1px solid #f0f0f0;
+  padding: 7px;
+  width: 300px;
 }
 
 .session-submit {
-
+  background-color: #3897f0;
+  border-radius: 5px;
 }
 
 .login-alt-box {
   border: 1px solid #f0f0f0;
   padding: 5px;
-  /* box-sizing: border-box */
 }
