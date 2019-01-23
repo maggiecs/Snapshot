@@ -14,14 +14,14 @@ export const login = (user) => {
 export const logout = () => {
   return dispatch => {
     return SessionApiUtil.logout().then(() => dispatch(
-      logoutCurrentUser()), errors => dispatch(receiveErrors(errors)));
+      logoutCurrentUser()), errors => dispatch(receiveErrors(errors.responseJSON)));
   };
 };
 
 export const signup = (user) => {
   return dispatch => {
     return SessionApiUtil.signup(user).then(user => dispatch(
-      receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)));
+      receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
   };
 };
 
