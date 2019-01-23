@@ -8,7 +8,7 @@ const msp = ({ errors }) => {
   return {
     errors: errors.session,
     formType: "Log in",
-    altLink: <Link to="/signup">Sign Up</Link>
+    altLink: <Link to="/">Sign Up</Link>
   };
 };
 
