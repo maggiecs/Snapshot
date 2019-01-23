@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import { removeErrors } from '../../actions/session_actions';
 
 const msp = ({ errors }) => {
   return {
@@ -14,7 +15,8 @@ const msp = ({ errors }) => {
 
 const mdp = dispatch => {
   return {
-    processForm: (user) => dispatch(signup(user))
+    processForm: (user) => dispatch(signup(user)),
+    removeErrors: () => dispatch(removeErrors())
   };
 };
 
