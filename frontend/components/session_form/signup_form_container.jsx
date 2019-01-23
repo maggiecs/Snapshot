@@ -8,7 +8,7 @@ import { removeErrors } from '../../actions/session_actions';
 const msp = ({ errors }) => {
   return {
     errors: errors.session,
-    formType: "signup",
+    formType: "Sign up",
     altLink: <Link to="/login">Login</Link>
   };
 };

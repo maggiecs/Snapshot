@@ -1,3 +1,42 @@
 html {
   background-color: #fafafa;
+  font-size: 16px;
+  font-weight: 400;
+}
+h1 {
+  font-family: 'Oleo Script', cursive;
+}
+
+.login-form-container {
+  background-color: #ffffff;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  /* box-sizing: border-box; */
+}
+
+.login-form-box {
+  border: 1px solid #f0f0f0;
+  /* box-sizing: border-box; */
+}
+
+.login-form {
+  height: 24px;
+  padding: 5px;
+  display: flex;
+  /* box-sizing: border-box */
+}
+
+.login-input {
+  display: block;
+}
+
+.session-submit {
+
+}
+
+.login-alt-box {
+  border: 1px solid #f0f0f0;
+  padding: 5px;
+  /* box-sizing: border-box */
 }
