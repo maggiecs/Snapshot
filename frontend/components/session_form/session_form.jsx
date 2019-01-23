@@ -53,9 +53,9 @@ class SessionForm extends React.Component {
     
     return (
       <div className="login-form-container">
+        <h1>Snapshot</h1>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className="login-form">
-            <label for="uname">Username:</label>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -63,9 +63,6 @@ class SessionForm extends React.Component {
                 placeholder="Username"
                 name="uname"
               />
-            
-      
-            <label for="psw">Password:</label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
