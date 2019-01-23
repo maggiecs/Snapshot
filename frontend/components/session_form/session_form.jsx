@@ -50,12 +50,16 @@ class SessionForm extends React.Component {
     // const signUpOption = <span>Don't have an account?</span> <span>{this.props.altLink}</span>;
     // const logInOption = <span> Have an account?</span> <span>{this.props.altLink}</span>;
     // const altOption =  ? signUpOption : logInOption;
-    
     return (
       <div className="login-form-container">
-        <h1>Snapshot</h1>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className="login-form">
+        <div className="login-form-image">
+          <img src={window.login_imageURL} />
+        </div>
+        
+        <div className="login-form-box">
+          <h1>Snapshot</h1>
+          <form onSubmit={this.handleSubmit} className="login-form">
+          
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -71,16 +75,18 @@ class SessionForm extends React.Component {
                 name="psw"
               />
             
-
             <input className="session-submit" type="submit" value={this.props.formType} />
-            <input className="session-submit" type="submit" value="Demo Log In" onClick={this.handleDemoSubmit} />
+            <button className="session-submit" onClick={this.handleDemoSubmit} >Demo Log In</button>
             {this.renderErrors()}
-          </div>
-        </form>
+          </form>
 
-        <div className="login-alt-box">
-          <span>Don't have an account?</span> <span>{this.props.altLink}</span>
-        </div >
+          <div className="login-alt-box">
+            <span>{"Don't have an account?"}</span> <span>{this.props.altLink}</span>
+          </div >
+        
+      </div>
+
+        
 
       </div>
     );
