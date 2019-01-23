@@ -12,6 +12,7 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
   },
@@ -27,7 +28,6 @@
     "postinstall": "./node_modules/.bin/webpack --mode=production",
     "start": "./node_modules/.bin/webpack --mode=production",
     "webpack": "webpack --watch --mode=development"
-
   },
   "repository": {
     "type": "git",
