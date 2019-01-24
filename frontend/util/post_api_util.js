@@ -1,19 +1,19 @@
 export const fetchPosts = () => {
   return $.ajax({
     method: "GET",
-    url: 
+    url: ""
   });
 };
 
 export const fetchPost = () => {
   return {
-    url: "/api/users/:id"
+    url: ""
   };
 };
 
 export const createPost = () => {
   return {
-    url: "/api/users"
+    url: ""
   };
 };
 

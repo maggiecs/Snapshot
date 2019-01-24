@@ -1,23 +1,22 @@
-html {
-  background-color: #fafafa;
-  font-size: 16px;
-  font-weight: 400;
+.body {
+  background: #fafafa;
 }
+
+.login-form-container {
+  background: #fafafa;
+  display: flex;
+  width: fit-content;
+  margin: 5px auto;
+  align-items: center;
+  height: 100vh;
+}
+
 .main-title {
   font-family: 'Cookie', cursive;
   text-align: center;
   font-size: 60px;
   padding-top: 20px;
   background-color: #ffffff;
-}
-
-.login-form-container {
-  background-color: #fafafa;
-  display: flex;
-  width: fit-content;
-  margin: 5px auto;
-  align-items: center;
-  height: 100vh;
 }
 
 .login-form-image {
