@@ -11,18 +11,28 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-
+    @posts = Post.all
+    render "api/posts/index"
   end
 
   def show
-
+    @post = Post.find(params[:id])
+    render "api/posts/show"
   end
 
   def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update_attributes(post_params)
+      render "api/posts/show"
+    else
+       render json: @post.errors.full_messages, status: 422
+    end
   end
 
   def delete
-
+    @post = Post.find(params[:id])
+    @post.destroy
+    render "api/posts/index"
   end
 
   private

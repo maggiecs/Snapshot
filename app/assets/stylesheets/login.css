@@ -128,3 +128,7 @@ h1 {
   color: #003569;
   font-weight: bold;
 }
+
+input[type="submit"]:disabled {
+  opacity: 0.6;
+}
