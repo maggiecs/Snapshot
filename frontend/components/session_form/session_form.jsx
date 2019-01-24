@@ -80,8 +80,9 @@ class SessionForm extends React.Component {
                 <input className="session-submit" type="submit" value={this.props.formType} />
                 <button className="session-submit" onClick={this.handleDemoSubmit} >Demo Log In</button>
               </div>
+              <div className="login-errors">{this.renderErrors()}</div>
             </form>
-            <div className="login-errors">{this.renderErrors()}</div>
+            
 
             <div className="login-alt-box">
               {this.props.formType === "Log in" ? <span>{"Don't have an account?"}</span> : 

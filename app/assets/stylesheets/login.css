@@ -85,6 +85,7 @@ h1 {
 }
 
 .login-errors {
+  background-color: #fafafa;
   padding: 20px;
   text-align: center; 
   font-size: 14px;
