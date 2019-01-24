@@ -3,7 +3,7 @@ import React from 'react';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { email: '', full_name: '', username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
@@ -61,6 +61,20 @@ class SessionForm extends React.Component {
               <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div>
               <div className="login-input-container">
                 <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                  placeholder="Email"
+                  name="uname"
+                />
+                <input type="text"
+                  value={this.state.full_name}
+                  onChange={this.update('full_name')}
+                  className="login-input"
+                  placeholder="Full Name"
+                  name="uname"
+                />
+                <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
@@ -73,7 +87,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   placeholder="Password"
                   name="psw"
-                />
+                /> 
               </div>
               <div className="session-submit-box">
                 <input className="session-submit" type="submit" value={this.props.formType}/>
