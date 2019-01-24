@@ -18,13 +18,18 @@ h1 {
   margin: 5px auto;
   align-items: center;
   height: 100vh;
- 
 }
 
 .login-form-image {
   width: 425px;
   margin: 5px;
 }
+
+@media (max-width: 875px) {
+        .login-form-image {
+          display: none;
+        }
+ }
 
 .login-form-box {
   height: 500px;
