@@ -9,7 +9,7 @@ const msp = ({ errors }) => {
   return {
     errors: errors.session,
     formType: "Sign up",
-    altLink: <Link to="/login">Login</Link>
+    altLink: <Link to="/login">Log in</Link>
   };
 };
 
