@@ -3,7 +3,7 @@ import React from 'react';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: '', password: ''};
+    this.state = { email: '', full_name: '', username: '', password: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
@@ -41,6 +41,8 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     this.props.loginForm({
+      email: "demouser@gmail.com",
+      full_name: "Demo User",
       username: 'DemoUser',
       password: 'welcometosnapshot'
     })
@@ -60,6 +62,23 @@ class SessionForm extends React.Component {
               <div></div>}
 
               <div className="login-input-container">
+                {this.props.formType === "Sign up" ?
+                <div>
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                    placeholder="Email"
+                    name="uname"
+                  />
+                  <input type="text"
+                    value={this.state.full_name}
+                    onChange={this.update('full_name')}
+                    className="login-input"
+                    placeholder="Full Name"
+                    name="uname"
+                  /> 
+                  </div> : <div></div>}
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
