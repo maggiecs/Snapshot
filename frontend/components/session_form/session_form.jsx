@@ -41,15 +41,12 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     this.props.loginForm({
-      username: 'Photographer',
-      password: 'landscape'
+      username: 'DemoUser',
+      password: 'welcometosnapshot'
     })
   }
   
   render() {
-    // const signUpOption = <span>Don't have an account?</span> <span>{this.props.altLink}</span>;
-    // const logInOption = <span> Have an account?</span> <span>{this.props.altLink}</span>;
-    // const altOption =  ? signUpOption : logInOption;
     return (
       <div>
         <div className="login-form-container">
@@ -74,7 +71,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input"
                 placeholder="Password"
-                name="psw"
+                name="psw" 
               />
               <div className="session-submit-box">
                 <input className="session-submit" type="submit" value={this.props.formType} />
