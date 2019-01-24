@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
           <div className="login-form-box">
 
             <form onSubmit={this.handleSubmit} className="login-form">
-              <h1>Snapshot</h1>
+              <h1 className="main-title">Snapshot</h1>
               <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div>
               <div className="login-input-container">
                 <input type="text"

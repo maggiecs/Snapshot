@@ -3,7 +3,7 @@ html {
   font-size: 16px;
   font-weight: 400;
 }
-h1 {
+.main-title {
   font-family: 'Cookie', cursive;
   text-align: center;
   font-size: 60px;
