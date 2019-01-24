@@ -1,29 +1,35 @@
 export const fetchPosts = () => {
   return $.ajax({
     method: "GET",
-    url: ""
+    url: "/api/posts"
   });
 };
 
-export const fetchPost = () => {
+export const fetchPost = (id) => {
   return {
-    url: ""
+    method: "GET",
+    url: `/api/posts/${id}`
   };
 };
 
-export const createPost = () => {
+export const createPost = (post) => {
   return {
-    url: ""
+    method: "POST",
+    url: "/api/posts",
+    data: { post }
   };
 };
 
-export const updatePost = () => {
+export const updatePost = (post) => {
   return {
-
+    method: "PATCH",
+    url: `/api/posts/${post.id}`,
+    data: { post }
   };
 };
-export const deletePost = () => {
+export const deletePost = (id) => {
   return {
-
+    method: "DELETE",
+    url: `/api/posts/${id}`
   };
 };
