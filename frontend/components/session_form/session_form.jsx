@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
   handleDemoSubmit(e) {
     e.preventDefault();
 
-    this.props.processForm({
+    this.props.loginForm({
       username: 'Photographer',
       password: 'landscape'
     })
@@ -51,15 +51,17 @@ class SessionForm extends React.Component {
     // const logInOption = <span> Have an account?</span> <span>{this.props.altLink}</span>;
     // const altOption =  ? signUpOption : logInOption;
     return (
-      <div className="login-form-container">
-        <div className="login-form-image">
-          <img src={window.login_imageURL} />
-        </div>
+      <div>
+        <div className="login-form-container">
+          <div className="login-form-image">
+            <img src={window.login_imageURL} />
+          </div>
         
-        <div className="login-form-box">
-          <h1>Snapshot</h1>
-          <form onSubmit={this.handleSubmit} className="login-form">
+          <div className="login-form-box">
           
+            <form onSubmit={this.handleSubmit} className="login-form">
+              <h1>Snapshot</h1>
+              <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -74,21 +76,26 @@ class SessionForm extends React.Component {
                 placeholder="Password"
                 name="psw"
               />
-            
-            <input className="session-submit" type="submit" value={this.props.formType} />
-            <button className="session-submit" onClick={this.handleDemoSubmit} >Demo Log In</button>
-            {this.renderErrors()}
-          </form>
+              <div className="session-submit-box">
+                <input className="session-submit" type="submit" value={this.props.formType} />
+                <button className="session-submit" onClick={this.handleDemoSubmit} >Demo Log In</button>
+              </div>
+            </form>
+            <div className="login-errors">{this.renderErrors()}</div>
 
-          <div className="login-alt-box">
-            <span>{"Don't have an account?"}</span> <span>{this.props.altLink}</span>
-          </div >
-        
+            <div className="login-alt-box">
+              {this.props.formType === "Log in" ? <span>{"Don't have an account?"}</span> : 
+              <span>{"Have an account?"}</span> } <span className="link-container">{this.props.altLink}</span>
+            </div >
+          </div>
+        </div>
+
+      <div className="login-bottom-links">
+        <a href="https://github.com/maggiecs">GITHUB</a>
+        <a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a>
       </div>
-
-        
-
-      </div>
+    </div>
+      
     );
   }
 }

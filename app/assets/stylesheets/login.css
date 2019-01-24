@@ -4,18 +4,21 @@ html {
   font-weight: 400;
 }
 h1 {
-  font-family: 'Oleo Script', cursive;
+  font-family: 'Cookie', cursive;
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
+  padding-top: 20px;
+  background-color: #ffffff;
 }
 
 .login-form-container {
   background-color: #fafafa;
   display: flex;
   width: fit-content;
-  margin: 0 auto;
+  margin: 5px auto;
   align-items: center;
   height: 100vh;
+ 
 }
 
 .login-form-image {
@@ -24,36 +27,93 @@ h1 {
 }
 
 .login-form-box {
-  border: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
   height: 500px;
+  margin: 5px;
+}
+  
+.login-form-phrase {
+  margin: 0 auto;
+  width: 250px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   background-color: #ffffff;
+  color: #999;
+  padding: 20px;
 }
 
 .login-form {
   padding: 5px;
-  margin: 20px auto 0;
   display: flex;
   width: 340px;
   flex-direction: column;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+
+.login-alt-box {
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  text-align: center; 
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  box-sizing: border-box; 
+}
+
+.session-submit-box {
+  margin: 5px auto;
+  text-align: center; 
+  vertical-align: middle;
+}
+.session-submit {
+  background-color: #3897f0;
+  border-radius: 5px;
+  width: 200px;
+  margin: 5px auto;
+  padding: 5px;
+  color: #ffffff;
+  text-align: center; 
+  vertical-align: middle;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.login-errors {
+  padding: 20px;
+  text-align: center; 
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #ff0000;
 }
 
 .login-input {
   background-color: #fafafa;
-  margin: 5px;
+  margin: 3px auto;
   border: 1px solid #f0f0f0;
-  padding: 7px;
-  width: 300px;
+  padding: 10px;
+  width: 250px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
-.session-submit {
-  background-color: #3897f0;
-  border-radius: 5px;
+.link-container {
+  color: #3897f0;
 }
 
-.login-alt-box {
-  border: 1px solid #f0f0f0;
-  padding: 5px;
+.login-bottom-links {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  margin: 0px auto;
+  padding-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #003569;
+  font-weight: bold;
 }
