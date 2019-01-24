@@ -3,7 +3,7 @@ import React from 'react';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: '', password: ''};
+    this.state = { username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
   }
@@ -45,20 +45,20 @@ class SessionForm extends React.Component {
       password: 'welcometosnapshot'
     })
   }
-  
+
   render() {
     return (
       <div>
         <div className="login-form-container">
+          <div className="login-form-image">
+            <img src={window.login_imageURL} />
+          </div>
+
           <div className="login-form-box">
-          
+
             <form onSubmit={this.handleSubmit} className="login-form">
               <h1>Snapshot</h1>
-
-              {this.props.formType === "Sign up" ? 
-              <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div> :
-              <div></div>}
-
+              <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div>
               <div className="login-input-container">
                 <input type="text"
                   value={this.state.username}
@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
                   onChange={this.update('password')}
                   className="login-input"
                   placeholder="Password"
-                  name="psw" 
+                  name="psw"
                 />
               </div>
               <div className="session-submit-box">
@@ -81,21 +81,21 @@ class SessionForm extends React.Component {
               </div>
               <div className="login-errors">{this.renderErrors()}</div>
             </form>
-            
+
 
             <div className="login-alt-box">
-              {this.props.formType === "Log in" ? <span>{"Don't have an account?"}</span> : 
-              <span>{"Have an account?"}</span> } <span className="login-link-container">{this.props.altLink}</span>
+              {this.props.formType === "Log in" ? <span>{"Don't have an account?"}</span> :
+                <span>{"Have an account?"}</span>} <span className="login-link-container">{this.props.altLink}</span>
             </div >
           </div>
         </div>
 
-      <div className="login-bottom-links">
-        <a href="https://github.com/maggiecs">GITHUB</a>
-        <a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a>
+        <div className="login-bottom-links">
+          <a href="https://github.com/maggiecs">GITHUB</a>
+          <a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a>
+        </div>
       </div>
-    </div>
-      
+
     );
   }
 }
