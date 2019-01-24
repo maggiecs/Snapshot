@@ -46,7 +46,7 @@ h1 {
   font-weight: bold;
   background-color: #ffffff;
   color: #999;
-  padding: 20px;
+  padding: 10px;
 }
 
 .login-form {
@@ -70,6 +70,10 @@ h1 {
   box-sizing: border-box; 
 }
 
+.login-input-container {
+  margin-top: 10px;
+  text-align: center; 
+}
 .session-submit-box {
   margin: 5px auto;
   text-align: center; 
@@ -90,7 +94,7 @@ h1 {
 }
 
 .login-errors {
-  background-color: #fafafa;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center; 
   font-size: 14px;
@@ -106,9 +110,10 @@ h1 {
   width: 250px;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
+  text-align: left;
 }
 
-.link-container {
+.login-link-container {
   color: #3897f0;
 }
 
