@@ -1,7 +1,7 @@
 export const fetchPosts = () => {
-  return {
-    
-  };
+  return $.ajax({
+    method: "GET",
+  });
 };
 
 export const fetchPost = () => {
