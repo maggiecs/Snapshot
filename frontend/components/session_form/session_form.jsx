@@ -58,26 +58,24 @@ class SessionForm extends React.Component {
               <h1 className="main-title">Snapshot</h1>
 
               {this.props.formType === "Sign up" ? 
-              <div className="login-form-phrase"> Sign up to see photos and videos from your friends.</div> :
+              <div className="login-form-phrase"> Sign up to see photos from your friends.</div> :
               <div></div>}
 
               <div className="login-input-container">
                 {this.props.formType === "Sign up" ?
                 <div>
-                  <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="login-input"
-                    placeholder="Email"
-                    name="uname"
-                  />
-                  <input type="text"
-                    value={this.state.full_name}
-                    onChange={this.update('full_name')}
-                    className="login-input"
-                    placeholder="Full Name"
-                    name="uname"
-                  /> 
+                    <input type="text"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      className="login-input"
+                      placeholder="Email"
+                    />
+                    <input type="text"
+                      value={this.state.full_name}
+                      onChange={this.update('full_name')}
+                      className="login-input"
+                      placeholder="Full Name"
+                    />
                   </div> : <div></div>}
                 <input type="text"
                   value={this.state.username}
