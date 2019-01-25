@@ -10,6 +10,7 @@ import SplashFormContainer from './session_form/splash_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileFormContainer from './profile/profile_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import PostIndexContainer from './post/post_index_container';
 
 const App = () => (
   <div>
@@ -18,7 +19,8 @@ const App = () => (
     </header>
     <ProtectedRoute component={NavBarContainer} />
     <Switch>
-      <ProtectedRoute path="/accounts/edit" component={ProfileFormContainer} />
+      <ProtectedRoute exact path="/accounts/edit" component={ProfileFormContainer} />
+      <ProtectedRoute exact path="/feed" component={PostIndexContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/" component={SplashFormContainer} />

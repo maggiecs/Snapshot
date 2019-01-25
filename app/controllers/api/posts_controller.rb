@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.with_attached_photos.find(params[:id])
     render "api/posts/show"
   end
 
@@ -38,7 +38,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body)
+    params.require(:post).permit(:body, :photo)
   end
 
 end
