@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: '', full_name: '', username: '', password: '', website: '', bio: '' };
+    this.state = {
+      id: this.props.currentUser.id,
+      email: this.props.currentUser.email, 
+      full_name: this.props.currentUser.full_name, 
+      username: this.props.currentUser.username, 
+      website: '', 
+      bio: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.removeErrors();
-  // }
 
   update(field) {
     return e => this.setState({
@@ -20,7 +21,7 @@ class ProfileForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.removeErrors();
+    // this.props.removeErrors();
     const user = Object.assign({}, this.state);
     this.props.updateUser(user);
   }
@@ -42,82 +43,71 @@ class ProfileForm extends React.Component {
       <div>
         <div className="user-form-container">
 
-          {/* <header class="header">
-            <nav class="header-nav">
-
-              <h1 class="header-logo">
-                <Link to="/"><img src={window.header_logoURL} /></Link>
-              </h1>
-
-              <ul class="header-list">
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Activity</a></li>
-                <li><a href="#">Profile</a></li>
-              </ul>
-
-            </nav>
-          </header> */}
-
           <div className="user-form-box">
             <div className="user-form-nav">
               <span>{"Edit Profile"}</span>
             </div >
 
             <form onSubmit={this.handleSubmit} className="user-form">
-              <h2 className="user-username-title">{this.props.username}</h2>
+              <h2 className="user-username-title">{this.props.currentUser.username}</h2>
               <div className="user-input-container">
-                <label for="name">Name</label>
+                <label htmlFor="name">Name
                 <input type="text"
                   value={this.state.full_name}
                   onChange={this.update('full_name')}
                   className="user-input"
                   name="name"
-                />
-                <label for="username">Username</label>
+                  /></label>
+                <label htmlFor="username">Username
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
-                  className="login-input"
+                  className="user-input"
                   name="username"
-                />
-                <label for="website">Website</label>
+                  /></label>
+                <label htmlFor="website">Website
                 <input type="text"
                   value={this.state.website}
                   onChange={this.update('website')}
-                  className="login-input"
+                  className="user-input"
                   name="website"
-                />
-                <label for="bio">Bio</label>
+                  /></label>
+                <label htmlFor="bio">Bio
                 <input type="text"
                   value={this.state.bio}
                   onChange={this.update('bio')}
-                  className="login-input"
+                  className="user-input"
                   name="bio"
-                />
-                <label for="email">Email</label>
+                  /></label>
+                <label htmlFor="email">Email
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
-                  className="login-input"
+                  className="user-input"
                   name="email"
-                />
+                  /></label>
               </div>
               <div className="user-submit-box">
                 <input className="user-submit" type="submit" value="Submit"
-                  disabled={!this.state.username} />
+                   />
               </div>
               {/* <div className="user-update-errors">{this.renderErrors()}</div> */}
             </form>
           </div>
         </div>
-        <div className="login-bottom-links">
-          <a href="https://github.com/maggiecs">GITHUB</a>
-          <a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a>
-        </div>
+        <footer className="footer">
+          <small className="footer-copy">
+            &copy; 2019 SNAPSHOT
+        </small>
+          <ul className="login-bottom-links">
+            <li><a href="https://github.com/maggiecs">GITHUB</a></li>
+            <li><a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a></li>
+          </ul>
+        </footer>
       </div>
+      
 
     );
-    return (<h1>hello</h1>)
   }
 }
 

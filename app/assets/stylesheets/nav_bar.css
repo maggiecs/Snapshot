@@ -1,0 +1,53 @@
+.header {
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 1250px;
+  align-items: center;
+}
+
+.nav-search {
+  border: 1px solid #e6e6e6;
+  display: block;
+  background-color: #fafafa;
+  padding: 5px 10px;
+  text-align: center; 
+  width: 200px;
+  border-radius: 3px;
+}
+
+.nav-logo {
+  height: 25px;
+  width: 25px;
+  display: block;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Cookie', cursive;
+  font-size: 25px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list > li {
+  display: block;
+  padding: 0px 10px;
+}
+
+.fa-instagram {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: solid 1px black;
+}
+
+.logo-name {
+  font-size: 35px;
+}
