@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
-
+import { fetchSearchedUsers } from '../../actions/user_actions';
 import NavBar from './nav_bar';
 
-const msp = ({ session, entities: { users } }) => {
+const msp = (state) => {
   return {
-    currentUser: users[session.id],
-    users: users
+    searchedUsers: Object.values(state.searched)
   };
 };
 
 const mdp = dispatch => {
   return {
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchSearchedUsers: (query) => dispatch(fetchSearchedUsers(query))
   };
 };
 
