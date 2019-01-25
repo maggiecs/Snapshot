@@ -9,12 +9,14 @@ import LogInFormContainer from './session_form/login_form_container';
 import SplashFormContainer from './session_form/splash_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileFormContainer from './profile/profile_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = () => (
   <div>
     <header>
       <GreetingContainer />
     </header>
+    <ProtectedRoute component={NavBarContainer} />
     <Switch>
       <ProtectedRoute path="/accounts/edit" component={ProfileFormContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
