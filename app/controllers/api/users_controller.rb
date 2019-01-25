@@ -11,7 +11,9 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.ApplicationController
+    #if params query 
+    @users = User.where("username LIKE '#{params[:query]}%'")
+    #else @users = Users.all
     render "api/users/index"
   end
 

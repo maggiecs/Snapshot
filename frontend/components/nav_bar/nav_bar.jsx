@@ -5,29 +5,23 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { searchedUser: "",
-                   currentDisplayedUsers: this.props.users };
-    this.onSearchedChange = this.onSearchedChange.bind(this);
+    this.state = { searchedUser: "" };
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  onSearchedChange() {
-    let newDisplayedUsers = _.filter(this.props.users, user => user.username.includes(event.target.value.toLowerCase()));
-    this.setState({
-      searchedUser: event.target.value,
-      currentDisplayedUsers: newDisplayedUsers
-    });
+    return e => {
+      this.setState({
+      [field]: e.currentTarget.value });
+      this.props.fetchSearchedUsers(e.currentTarget.value);
+    };
   }
 
   renderUsers() {
-    return this.state.currentDisplayedUsers.map((user) => {
-      return <li>{user.username}</li>;
-    });
+    if (this.state.searchedUser.length > 0) {
+      return this.props.searchedUsers.map((user) => {
+        return <li key={user.username}>{user.username}</li>;
+      });
+    }
   }
 
   render() {
@@ -56,9 +50,8 @@ class NavBar extends React.Component {
               <li><a href="#">Profile</a></li>
             </ul>
           </li>
-
-          {/* {this.renderUsers()} */}
         </ul>
+        {this.renderUsers()}
     </header>
 
     );
