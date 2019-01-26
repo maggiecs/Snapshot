@@ -20,8 +20,9 @@ export const fetchPost = (id) => {
 
 export const createPost = (post) => {
   return dispatch => {
-    return PostApiUtil.createPost(post).then(post => dispatch(receivePost(post)), 
-      errors => dispatch(receivePostErrors(errors.responseJSON)));
+    return PostApiUtil.createPost(post);
+    // .then(post => dispatch(receivePost(post)), 
+    //   errors => dispatch(receivePostErrors(errors.responseJSON)));
   };
 };
 

@@ -6,30 +6,34 @@ export const fetchPosts = () => {
 };
 
 export const fetchPost = (id) => {
-  return {
+  return $.ajax({
     method: "GET",
     url: `/api/posts/${id}`
-  };
+  });
 };
 
 export const createPost = (post) => {
-  return {
+  return $.ajax({
     method: "POST",
     url: "/api/posts",
-    data: { post }
-  };
+    data: post,
+    contentType: false,
+    processData: false,
+  });
 };
 
 export const updatePost = (post) => {
-  return {
+  return $.ajax({
     method: "PATCH",
     url: `/api/posts/${post.id}`,
-    data: { post }
-  };
+    data: post,
+    contentType: false,
+    processData: false,
+  });
 };
 export const deletePost = (id) => {
-  return {
+  return $.ajax({
     method: "DELETE",
     url: `/api/posts/${id}`
-  };
+  });
 };
