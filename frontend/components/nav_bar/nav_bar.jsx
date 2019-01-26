@@ -36,6 +36,7 @@ class NavBar extends React.Component {
             {/* <img src={window.header_logoURL} /></Link> */}
           </li>
           <li className="nav-search-container">
+            <img src={window.search_iconURL} />
             <input type="text"
               value={this.searchedUser}
               className="nav-search"
@@ -45,9 +46,9 @@ class NavBar extends React.Component {
           </li> 
           <li>
             <ul className="nav-list">
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Activity</a></li>
-              <li><a href="#">Profile</a></li>
+              <li><a href="#"><i className="far fa-compass"></i></a></li>
+              <li><a href="#"><i className="far fa-heart"></i></a></li>
+              <li><a href="#"><i className="far fa-user"></i></a></li>
             </ul>
           </li>
         </ul>

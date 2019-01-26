@@ -1,4 +1,6 @@
 import React from 'react';
+import PostIndexItem from './post_index_item';
+import { receivePost } from '../../actions/post_actions';
 
 class PostIndex extends React.Component {
   constructor(props) {
@@ -13,6 +15,10 @@ class PostIndex extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
   handleInput(e) {
     this.setState({body: e.currentTarget.value});
   }
@@ -25,42 +31,47 @@ class PostIndex extends React.Component {
 
       formData.append('post[photo]', this.state.photoFile);
     }
-    // $.ajax({
-    //   url: '/api/posts',
-    //   method: 'POST',
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false
-    // });
-    this.props.createPost(formData);
+    this.props.createPost(formData).then(post => dispatch(receivePost(post)));
   }
 
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState( {photoFile: file, photoUrl: fileReader.result});
-    };
 
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
     if (file) {
       fileReader.readAsDataURL(file);
     }
   }
 
   render() {
-    const preview = this.state.photoURL ? <img src={this.state.photoUrl} /> : null;
+    const posts = this.props.posts.map(post => {
+      return (
+        <PostIndexItem
+          key={post.id}
+          post={post} />
+      );
+    });
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null ;
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <input type="text" 
-        value={this.state.body} 
-        onChange={this.handleInput}/>
-        <input type="file"
-        onChange={this.handleFile}
-        />
-        <h3>Image preview </h3>
-        {preview}
-        <input type="submit" value="Submit"/>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input type="text" 
+          value={this.state.body} 
+          onChange={this.handleInput}/>
+          <input type="file"
+          onChange={this.handleFile}
+          />
+          <h3>Image preview </h3>
+          {preview}
+          <input type="submit" value="Submit"/>
+        </form>
+        <ul>
+          {posts}
+        </ul>
+      </div>
     );
   }
 

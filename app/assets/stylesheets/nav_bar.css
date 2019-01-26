@@ -12,14 +12,30 @@
   align-items: center;
 }
 
+.nav-search-container {
+  display: flex;
+}
+
+.nav-search-container img {
+  height: 20px;
+  width: auto;
+  padding: 5px;
+  background: #fafafa;
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 3px; 
+  border-top: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6; 
+}
+
 .nav-search {
-  border: 1px solid #e6e6e6;
-  display: block;
+  border-top: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   background-color: #fafafa;
-  padding: 5px 10px;
-  text-align: center; 
   width: 200px;
-  border-radius: 3px;
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
 }
 
 .nav-logo {
@@ -40,6 +56,7 @@
 .nav-list > li {
   display: block;
   padding: 0px 10px;
+  font-size: 24px;
 }
 
 .fa-instagram {
