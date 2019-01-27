@@ -40,9 +40,8 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="user-form-entire-container">
         <div className="user-form-container">
-
           <div className="user-form-box">
             <div className="user-form-nav">
               <span>{"Edit Profile"}</span>
@@ -51,41 +50,49 @@ class ProfileForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="user-form">
               <h2 className="user-username-title">{this.props.currentUser.username}</h2>
               <div className="user-input-container">
-                <label htmlFor="name">Name
-                <input type="text"
-                  value={this.state.full_name}
-                  onChange={this.update('full_name')}
-                  className="user-input"
-                  name="name"
-                  /></label>
-                <label htmlFor="username">Username
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="user-input"
-                  name="username"
-                  /></label>
-                <label htmlFor="website">Website
-                <input type="text"
-                  value={this.state.website}
-                  onChange={this.update('website')}
-                  className="user-input"
-                  name="website"
-                  /></label>
-                <label htmlFor="bio">Bio
-                <input type="text"
-                  value={this.state.bio}
-                  onChange={this.update('bio')}
-                  className="user-input"
-                  name="bio"
-                  /></label>
-                <label htmlFor="email">Email
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="user-input"
-                  name="email"
-                  /></label>
+                <div className="user-name-input">
+                  <label htmlFor="name">Name</label>
+                  <input type="text"
+                    value={this.state.full_name}
+                    onChange={this.update('full_name')}
+                    className="user-input"
+                    name="name"
+                    />
+                </div>
+                <div className="user-username-input">
+                  <label htmlFor="username">Username</label>
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="user-input"
+                    name="username"
+                    />
+                </div>
+                <div className="user-username-website">
+                  <label htmlFor="website">Website</label>
+                  <input type="text"
+                    value={this.state.website}
+                    onChange={this.update('website')}
+                    className="user-input"
+                    name="website"
+                    />
+                </div>
+                <div className="user-username-bio">
+                  <label htmlFor="bio">Bio</label>
+                  <textarea value={this.state.bio}
+                    onChange={this.update('bio')}
+                    className="user-input"
+                    name="bio"></textarea>
+                </div>
+                <div className="user-username-email">
+                  <label htmlFor="email">Email</label>
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="user-input"
+                    name="email"
+                    />
+                </div>
               </div>
               <div className="user-submit-box">
                 <input className="user-submit" type="submit" value="Submit"
