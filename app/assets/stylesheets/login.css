@@ -116,16 +116,31 @@
   color: #3897f0;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  margin: 0 auto;
+  font-size: 13px;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+
+.footer-copy {
+  display: block;
+  color: #aaa;  
+}
+
 .login-bottom-links {
   display: flex;
   width: 200px;
   justify-content: space-between;
   margin: 0px auto;
   padding-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
   color: #003569;
-  font-weight: bold;
+  
 }
 
 input[type="submit"]:disabled {

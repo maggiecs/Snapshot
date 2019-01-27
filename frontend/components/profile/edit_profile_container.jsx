@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import ProfileForm from './profile_form';
+import ProfileForm from './edit_profile_form';
 import { updateUser } from '../../actions/user_actions';
 
 const msp = (state) => {

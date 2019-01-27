@@ -9,8 +9,12 @@ class ProfileForm extends React.Component {
       full_name: this.props.currentUser.full_name, 
       username: this.props.currentUser.username, 
       website: '', 
-      bio: '' };
+      bio: '',
+      photoFile: null,
+      photoUrl: this.props.currentUser.photoUrl};
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   update(field) {
@@ -21,22 +25,49 @@ class ProfileForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.removeErrors();
-    const user = Object.assign({}, this.state);
-    this.props.updateUser(user);
+   
+
+    const formData = new FormData();
+    formData.append('user[id]', this.state.id);
+    formData.append('user[email]', this.state.email);
+    formData.append('user[full_name]', this.state.full_name);
+    formData.append('user[username]', this.state.username);
+    formData.append('user[website]', this.state.website);
+    formData.append('user[bio]', this.state.bio);
+
+    if (this.state.photoFile) {
+      formData.append('post[photo]', this.state.photoFile);
+    }
+
+     // this.props.removeErrors();
+    // const user = Object.assign({}, this.state);
+    this.props.updateUser(formData);
+    
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
+
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
@@ -48,7 +79,14 @@ class ProfileForm extends React.Component {
             </div >
 
             <form onSubmit={this.handleSubmit} className="user-form">
+
               <h2 className="user-username-title">{this.props.currentUser.username}</h2>
+              <input
+                type="file"
+                onChange={this.handleFile}
+              />
+              <img id='edit-user-profile-picture' src={this.state.photoUrl} />
+
               <div className="user-input-container">
                 <div className="user-name-input">
                   <label htmlFor="name">Name</label>
@@ -103,13 +141,15 @@ class ProfileForm extends React.Component {
           </div>
         </div>
         <footer className="footer">
+          <nav className="login-bottom-nav">
+            <ul className="login-bottom-links">
+              <li><a href="https://github.com/maggiecs">GITHUB</a></li>
+              <li><a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a></li>
+            </ul>
+          </nav>
           <small className="footer-copy">
             &copy; 2019 SNAPSHOT
-        </small>
-          <ul className="login-bottom-links">
-            <li><a href="https://github.com/maggiecs">GITHUB</a></li>
-            <li><a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a></li>
-          </ul>
+          </small>
         </footer>
       </div>
       
