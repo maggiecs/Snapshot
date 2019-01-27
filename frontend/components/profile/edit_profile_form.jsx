@@ -25,7 +25,6 @@ class ProfileForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-   
 
     const formData = new FormData();
     formData.append('user[id]', this.state.id);
@@ -34,11 +33,11 @@ class ProfileForm extends React.Component {
     formData.append('user[username]', this.state.username);
     formData.append('user[website]', this.state.website);
     formData.append('user[bio]', this.state.bio);
-
+    debugger
     if (this.state.photoFile) {
-      formData.append('post[photo]', this.state.photoFile);
+      formData.append('user[photo]', this.state.photoFile);
     }
-
+    debugger
      // this.props.removeErrors();
     // const user = Object.assign({}, this.state);
     this.props.updateUser(formData);

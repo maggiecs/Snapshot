@@ -28,7 +28,6 @@ class PostIndex extends React.Component {
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
     if (this.state.photoFile) {
-
       formData.append('post[photo]', this.state.photoFile);
     }
     this.props.createPost(formData).then(post => dispatch(receivePost(post)));
@@ -41,6 +40,7 @@ class PostIndex extends React.Component {
 
       this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
+
     if (file) {
       fileReader.readAsDataURL(file);
     }
