@@ -3,7 +3,8 @@
 }
 
 .user-form-container {
-  display: inline-block
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
 }
 
 .user-form-box {
@@ -22,17 +23,31 @@
   width: 100px;
 }
 
+@media (max-width: 600px) {
+        .user-form-nav {
+          display: none;
+        }
+ }
+
 .user-form {
   display: flex;
   flex-direction: column;
-   padding: 30px;
-  width: 350px;
+  padding: 30px;
+  width: 380px;
 }
 
 .user-input-container {
-  /* display: flex;
-  flex-direction: column; */
   text-align: right;
+}
+
+
+.user-input-container div {
+  padding-bottom: 10px;
+}
+
+.user-input-container label {
+  font-weight: bold;
+  padding-right: 30px;
 }
 
 .user-username-title {
@@ -51,6 +66,10 @@
   text-align: left;
 } 
 
+.user-username-bio label {
+  vertical-align: 30px;
+}
+
 .user-submit {
   background-color: #3897f0;
   border-radius: 5px;
@@ -68,3 +87,4 @@
   text-align: center;
   padding-top: 20px;
 }
+
