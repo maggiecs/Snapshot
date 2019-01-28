@@ -59,6 +59,11 @@
   font-size: 24px;
 }
 
+.nav-list > li > a > img {
+  height: 30px;
+  width: auto;
+}
+
 .fa-instagram {
   padding-right: 10px;
   margin-right: 10px;

@@ -33,11 +33,9 @@ class ProfileForm extends React.Component {
     formData.append('user[username]', this.state.username);
     formData.append('user[website]', this.state.website);
     formData.append('user[bio]', this.state.bio);
-    debugger
     if (this.state.photoFile) {
       formData.append('user[photo]', this.state.photoFile);
     }
-    debugger
      // this.props.removeErrors();
     // const user = Object.assign({}, this.state);
     this.props.updateUser(formData);
@@ -70,74 +68,78 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <div className="user-form-entire-container">
-        <div className="user-form-container">
-          <div className="user-form-box">
-            <div className="user-form-nav">
-              <span>{"Edit Profile"}</span>
-            </div >
+      <div className="user-form-container">
+        <div className="user-form-box">
+          <div className="user-form-nav">
+            <span>{"Edit Profile"}</span>
+          </div >
 
-            <form onSubmit={this.handleSubmit} className="user-form">
-
-              <h2 className="user-username-title">{this.props.currentUser.username}</h2>
-              <input
-                type="file"
-                onChange={this.handleFile}
-              />
-              <img id='edit-user-profile-picture' src={this.state.photoUrl} />
-
-              <div className="user-input-container">
-                <div className="user-name-input">
-                  <label htmlFor="name">Name</label>
-                  <input type="text"
-                    value={this.state.full_name}
-                    onChange={this.update('full_name')}
-                    className="user-input"
-                    name="name"
-                    />
-                </div>
-                <div className="user-username-input">
-                  <label htmlFor="username">Username</label>
-                  <input type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
-                    className="user-input"
-                    name="username"
-                    />
-                </div>
-                <div className="user-username-website">
-                  <label htmlFor="website">Website</label>
-                  <input type="text"
-                    value={this.state.website}
-                    onChange={this.update('website')}
-                    className="user-input"
-                    name="website"
-                    />
-                </div>
-                <div className="user-username-bio">
-                  <label htmlFor="bio">Bio</label>
-                  <textarea value={this.state.bio}
-                    onChange={this.update('bio')}
-                    className="user-input"
-                    name="bio"></textarea>
-                </div>
-                <div className="user-username-email">
-                  <label htmlFor="email">Email</label>
-                  <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="user-input"
-                    name="email"
-                    />
-                </div>
+          <form onSubmit={this.handleSubmit} className="user-form">
+            <div className="edit-profile-picture">
+              <img src={this.state.photoUrl} />
+              <div className="edit-picture-button">
+                <h2 className="user-username-title">{this.props.currentUser.username}</h2>
+                <label htmlFor="edit-file-upload" className="profile-file-upload">
+                  Change Profile Photo
+                </label>
+                <input
+                  id="edit-file-upload"
+                  type="file"
+                  onChange={this.handleFile}
+                />
               </div>
-              <div className="user-submit-box">
-                <input className="user-submit" type="submit" value="Submit"
-                   />
+            </div>
+            <div className="user-input-container">
+              <div className="user-name-input">
+                <label htmlFor="name">Name</label>
+                <input type="text"
+                  value={this.state.full_name}
+                  onChange={this.update('full_name')}
+                  className="user-input"
+                  name="name"
+                  />
               </div>
-              {/* <div className="user-update-errors">{this.renderErrors()}</div> */}
-            </form>
-          </div>
+              <div className="user-username-input">
+                <label htmlFor="username">Username</label>
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="user-input"
+                  name="username"
+                  />
+              </div>
+              <div className="user-username-website">
+                <label htmlFor="website">Website</label>
+                <input type="text"
+                  value={this.state.website}
+                  onChange={this.update('website')}
+                  className="user-input"
+                  name="website"
+                  />
+              </div>
+              <div className="user-username-bio">
+                <label htmlFor="bio">Bio</label>
+                <textarea value={this.state.bio}
+                  onChange={this.update('bio')}
+                  className="user-input"
+                  name="bio"></textarea>
+              </div>
+              <div className="user-username-email">
+                <label htmlFor="email">Email</label>
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="user-input"
+                  name="email"
+                  />
+              </div>
+            </div>
+            <div className="user-submit-box">
+              <input className="user-submit" type="submit" value="Submit"
+                  />
+            </div>
+            {/* <div className="user-update-errors">{this.renderErrors()}</div> */}
+          </form>
         </div>
         <footer className="footer">
           <nav className="login-bottom-nav">
@@ -148,11 +150,9 @@ class ProfileForm extends React.Component {
           </nav>
           <small className="footer-copy">
             &copy; 2019 SNAPSHOT
-          </small>
+        </small>
         </footer>
       </div>
-      
-
     );
   }
 }

@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-
 demo_user = User.create!({ 
       email: "demouser@gmail.com",
       full_name: "Demo User",
       username: 'DemoUser',
       password: 'welcometosnapshot'
     });
+
+demo_user.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_user.png"), filename: 'default_user.png')
