@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
 
   def index
     #if params query 
-    @users = User.where("username LIKE '#{params[:query]}%'")
+    @users = User.where("lower(username) LIKE '#{params[:query].downcase}%'")
     #else @users = Users.all
     render "api/users/index"
   end
