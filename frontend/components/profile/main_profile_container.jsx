@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import MainProfile from './main_profile';
 import { fetchUserPosts } from '../../actions/post_actions';
-
+import { openModal } from '../../actions/modal_actions';
 const msp = (state) => {
   const { session, entities: { users, posts } } = state;
   const currentUser = users[session.id];
@@ -19,7 +19,8 @@ const msp = (state) => {
 const mdp = dispatch => {
   return {
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    openModal: (postId) => dispatch(openModal("post", postId))
   };
 };
 

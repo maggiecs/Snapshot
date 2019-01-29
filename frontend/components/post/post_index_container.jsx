@@ -6,6 +6,7 @@ import PostIndexForm from './post_index_form';
 import { removeErrors } from '../../actions/session_actions';
 import { createPost } from '../../actions/post_actions';
 import { fetchPosts } from '../../actions/post_actions';
+import { openModal }  from '../../actions/modal_actions';
 
 const msp = (state) => {
   return {
@@ -17,7 +18,7 @@ const msp = (state) => {
 const mdp = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
-    createPost: (post) => dispatch(createPost(post))
+    createPost: (post) => dispatch(createPost(post)),
   };
 };
 
