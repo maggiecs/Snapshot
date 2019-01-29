@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MainProfilePostItem from './main_profile_post_item';
+import ProfilePostItem from './profile_post_item';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -11,21 +11,25 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchUser(this.props.match.params.id);
     this.props.fetchUserPosts(this.props.match.params.id);
+  }
+
+  componentDidUpdate(oldProps) {
+    if (oldProps.match.params.id != this.props.match.params.id) {
+      this.props.fetchUser(this.props.match.params.id);
+      this.props.fetchUserPosts(this.props.match.params.id);
+    }
   }
 
   render() {
     let userPosts;
     if (this.props.user && this.props.user.post_ids) {
       userPosts = this.props.user.post_ids.map(post_id => {
-        return <MainProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} />;
+        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} />;
       }).reverse();
     }
 
-
-    if (this.props.user) {
     return (
       <div className="main-profile-container">
         <div className="main-profile-header">
@@ -64,7 +68,6 @@ class UserProfile extends React.Component {
         </footer>
       </div>
     );
-    }
   }
 }
 

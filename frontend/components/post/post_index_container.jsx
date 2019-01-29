@@ -9,6 +9,7 @@ import { fetchPosts } from '../../actions/post_actions';
 
 const msp = (state) => {
   return {
+    users: state.entities.users,
     posts: Object.keys(state.entities.posts).map(id => state.entities.posts[id])
   };
 };

@@ -4,7 +4,7 @@ const searchedUsersReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SEARCHED_USERS:
-      return Object.values(action.users);
+      return Object.keys(action.users);
     default:
       return state;
   }

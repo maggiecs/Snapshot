@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MainProfilePostItem from './main_profile_post_item';
+import ProfilePostItem from './profile_post_item';
 
 class MainProfile extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class MainProfile extends React.Component {
     let userPosts;
     if (this.props.currentUser.post_ids) {
       userPosts = this.props.currentUser.post_ids.map(post_id => {
-        return <MainProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts}/>;
+        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts}/>;
       }).reverse();
     }
     
