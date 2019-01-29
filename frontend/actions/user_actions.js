@@ -22,10 +22,10 @@ export const updateUser = (user) => {
   };
 };
 
-const receiveUser = (user) => {
+const receiveUser = (payload) => {
   return {
     type: RECEIVE_USER,
-    user
+    payload
   };
 };
 

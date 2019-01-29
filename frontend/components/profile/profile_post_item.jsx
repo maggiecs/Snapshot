@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainProfilePostItem = ({ posts, post_id} ) => {
+const ProfilePostItem = ({ posts, post_id} ) => {
     return (
       <li key={post_id} posts={posts}>
           <img src={posts[post_id].photoUrl} />
@@ -9,4 +9,4 @@ const MainProfilePostItem = ({ posts, post_id} ) => {
 
 };
 
-export default MainProfilePostItem;
+export default ProfilePostItem;

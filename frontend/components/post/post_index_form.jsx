@@ -51,27 +51,17 @@ class PostIndex extends React.Component {
       return (
         <PostIndexItem
           key={post.id}
-          post={post} />
+          post={post} 
+          users={this.props.users} />
       );
-    });
+    }).reverse();
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null ;
     return (
-      <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" 
-          value={this.state.body} 
-          onChange={this.handleInput}/>
-          <input type="file"
-          onChange={this.handleFile}
-          />
-          <h3>Image preview </h3>
-          {preview}
-          <input type="submit" value="Submit"/>
-        </form>
-        <ul>
-          {posts}
-        </ul>
+      <div className="post-index-container">
+        <div className="post-index-images">
+        {posts}
       </div>
+      </div>  
     );
   }
 

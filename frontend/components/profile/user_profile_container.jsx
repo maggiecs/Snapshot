@@ -5,7 +5,7 @@ import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
   const { entities: { users, posts } } = state;
-  const user = users[ownProps.match.params.id];
+  const user = users[ownProps.match.params.id] || {};
   return {
     user: user,
     posts: posts,
