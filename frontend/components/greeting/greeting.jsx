@@ -14,8 +14,8 @@ const Greeting = ({currentUser, logout}) => {
 
   const personalGreeting = () => (
     <div>
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
+      {/* <h2 className="header-name">Hi, {currentUser.username}!</h2>
+      <button className="header-button" onClick={logout}>Log Out</button> */}
     </div>
   );
 

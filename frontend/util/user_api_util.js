@@ -1,5 +1,3 @@
-// createUser from ::import { signup } from "./session_api_utl.js";
-
 // export const fetchUsers = () => {
 //   return $.ajax({
 //     method: "GET",

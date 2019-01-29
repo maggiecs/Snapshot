@@ -8,8 +8,8 @@ class ProfileForm extends React.Component {
       email: this.props.currentUser.email, 
       full_name: this.props.currentUser.full_name, 
       username: this.props.currentUser.username, 
-      website: '', 
-      bio: '',
+      website: this.props.currentUser.website, 
+      bio: this.props.currentUser.bio,
       photoFile: null,
       photoUrl: this.props.currentUser.photoUrl};
 
