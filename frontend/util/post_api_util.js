@@ -5,6 +5,13 @@ export const fetchPosts = () => {
   });
 };
 
+export const fetchUserPosts = (userId) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/users/${userId}/posts`
+  });
+};
+
 export const fetchPost = (id) => {
   return $.ajax({
     method: "GET",

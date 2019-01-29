@@ -119,7 +119,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  width: 900px;
+  /* width: 900px; */
   margin: 0 auto;
   font-size: 13px;
   padding: 40px;
