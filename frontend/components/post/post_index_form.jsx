@@ -52,7 +52,8 @@ class PostIndex extends React.Component {
         <PostIndexItem
           key={post.id}
           post={post} 
-          users={this.props.users} />
+          users={this.props.users}
+          openModal={() => this.props.openModal(post.id)} />
       );
     }).reverse();
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null ;

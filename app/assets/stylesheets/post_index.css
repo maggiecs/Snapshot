@@ -1,7 +1,7 @@
 .post-index-container {
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 14px; 
 }
 
 .post-index-images {
@@ -21,9 +21,27 @@
   height: 60px;
   background: #ffffff;
   border: 1px solid #e6e6e6;
-  display: block;
-
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
 }
+.post-index-author-img {
+  height: 40px;
+  width: 40px;
+  display: block;
+}
+.post-index-image-header h2 {
+  margin-left: 10px;
+}
+
+.post-index-author-img > img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
 .post-index-image {
   display: block;
   border: 1px solid #e6e6e6;
@@ -45,6 +63,18 @@
 
 .post-index-image-icons {
 
+}
+
+.post-index-image-body {
+  display: flex;
+}
+
+.post-index-author {
+  font-weight: 700;
+}
+
+.post-index-image-body > p {
+  padding-left: 5px;
 }
 
 .post-index-image-comments {

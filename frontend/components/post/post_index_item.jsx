@@ -1,11 +1,14 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({ post, users }) => {
   return (
     <div className="post-index-image-box">
       <div className="post-index-image-header">
-        {/* <h2>{users[post.author_id].username}</h2> */}
+        <div className="post-index-author-img">
+          <img src={users[post.author_id].photoUrl} />
+        </div>
+        <Link className="post-index-author" to={`/users/${post.author_id}`}><h2>{users[post.author_id].username}</h2></Link>
       </div>
       <div key={post.id} className="post-index-image">
         <img src={post.photoUrl} />
@@ -16,7 +19,13 @@ const PostIndexItem = ({ post, users }) => {
           <i className="far fa-comment"></i>
         </div>
         <div className="post-index-image-likes">
-        <p>100 likes</p>
+          <p>100 likes</p>
+        </div>
+        <div className="post-index-image-body">
+          <div className="post-index-author">
+            <Link className="post-index-author" to={`/users/${post.author_id}`}><h2>{users[post.author_id].username}</h2></Link>
+          </div>
+          <p>{post.body}</p>
         </div>
         <div className="post-index-image-comments">
           <p>INSERT COMMENTS HERE</p>

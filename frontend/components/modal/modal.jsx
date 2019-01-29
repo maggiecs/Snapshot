@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-// import PhotoContainer from '../profile/photo_container';
+import PostContainer from '../post/post_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -9,8 +9,8 @@ function Modal({ modal, closeModal }) {
   }
   let component;
   switch (modal) {
-    case 'photo':
-      component = <PhotoContainer />;
+    case 'post':
+      component = <PostContainer />;
       break;
     default:
       return null;
@@ -26,7 +26,7 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 
