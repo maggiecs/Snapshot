@@ -1,8 +1,7 @@
 import React from 'react';
-import PostIndexItem from './post_index_item';
-import { receivePost } from '../../actions/post_actions';
+import { Link } from 'react-router-dom';
 
-class PostIndex extends React.Component {
+class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,10 +33,39 @@ class PostIndex extends React.Component {
   
    
     return (
-      <img src={this.props.post.photoUrl} />
+      <div className="post-show-container">
+        <div className="post-show-container-img">
+          <img src={this.props.post.photoUrl} />
+        </div>
+        <div className="post-show-right-container">
+          <div className="post-show-right-header">
+            <img src={this.props.post.photoUrl}  />
+            <div className="post-show-right-edit">
+              <h2>{this.props.user.username}</h2>
+              <Link to={`post/${this.props.post.id}/edit`}>Edit Post</Link>
+            </div>
+          </div>
+          <div className="post-show-right-bottom">
+            <div className="post-show-comments">
+              <p>INSERT COMMENT HERE</p>
+              <p>INSERT COMMENT HERE</p>
+            </div>
+            <div className="post-show-icons">
+              <i className="far fa-heart"></i>
+              <i className="far fa-comment"></i>
+            </div>
+            <div className="post-show-likes">
+              <p>100 likes</p>
+            </div>
+            <div className="post-show-add-comment">
+              <textarea placeholder="Add a comment..."></textarea>
+            </div>
+           </div>
+        </div>
+      </div>
     );
   }
 
 }
 
-export default PostIndex;
+export default Post;

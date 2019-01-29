@@ -6,9 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state) => {
   const { session, entities: { users, posts } } = state;
   const currentUser = users[session.id];
-  // if (currentUser.posts) {
-  //   posts = Object.keys(currentUser.posts);
-  // }
 
   return {
     currentUser: currentUser,
