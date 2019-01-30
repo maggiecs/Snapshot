@@ -14,6 +14,8 @@
 
 .nav-search-container {
   display: flex;
+  position: relative;
+
 }
 
 .nav-search-container img {
@@ -82,10 +84,9 @@
   flex-direction: column;
   font-family: Roboto, sans-serif;
   align-items: center;
-  /* position: absolute;*/
+  position: absolute;
   z-index: 50;
-  /* top: 10%; 
-  left: 35%; */
+  top: 50px;
 }
 
 .nav-searched-user {
