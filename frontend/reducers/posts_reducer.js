@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 import merge from 'lodash/merge';
 
 const postsReducer = (state = {}, action) => {
@@ -10,6 +11,8 @@ const postsReducer = (state = {}, action) => {
       return merge({}, state, { [action.post.id]: action.post });
     case RECEIVE_USER_POSTS:
       return merge({}, state, action.payload.posts);
+    case LOGOUT_CURRENT_USER:
+      return {};
     case REMOVE_POST:
       let newState = merge({}, state);
       delete newState[action.postId];

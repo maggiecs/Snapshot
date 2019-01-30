@@ -38,7 +38,7 @@ class ProfileForm extends React.Component {
     }
      // this.props.removeErrors();
     // const user = Object.assign({}, this.state);
-    this.props.updateUser(formData);
+    this.props.updateUser(formData).then(() => this.props.history.push('/profile'));
     
   }
 

@@ -19,7 +19,7 @@ class NavBar extends React.Component {
   renderUsers() {
     if (this.state.searchedUser.length > 0) {
       return this.props.searchedUsers.map((userId) => {
-        return <Link to={`/users/${userId}`}><li key={userId} className="nav-searched-user">
+        return <Link key={userId}  to={`/users/${userId}`}><li className="nav-searched-user">
                   <img className="nav-search-user-img" src={this.props.users[userId].photoUrl} />
                   <div className="nav-search-user-info">
                     <div className="nav-search-user-username">
@@ -53,6 +53,9 @@ class NavBar extends React.Component {
               onChange={this.update('searchedUser')}
               placeholder="Search"
             />
+            <ul className="nav-searched-user-list">
+              {this.renderUsers()}
+            </ul>
           </li> 
           <li>
             <ul className="nav-list">
@@ -61,9 +64,7 @@ class NavBar extends React.Component {
             </ul>
           </li>
         </ul>
-        <ul className="nav-searched-user-list">
-          {this.renderUsers()}
-        </ul>
+       
     </header>
 
     );

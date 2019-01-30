@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @user.photo.attach(io: File.open("#{Rails.root}/app/assets/images/default_user.png"), filename: 'default_user.png')
       login(@user)
       render "api/users/show"
     else
@@ -25,6 +24,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
+    if params[:user][:photo]
+      @user.photo.attach(params[:user][:photo])
+    end
     if @user.update(user_params)
       render "api/users/show"
     else
@@ -35,7 +37,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :full_name, :website, :bio, :photo, :postIds)
+    params.require(:user).permit(:username, :password, :email, :full_name, :website, :bio, :postIds)
   end
 
 end
