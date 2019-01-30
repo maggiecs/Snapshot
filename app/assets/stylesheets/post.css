@@ -37,6 +37,8 @@
 .post-show-right-header {
   margin: 0 20px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-show-right-edit {
@@ -49,13 +51,17 @@
   color: #3897f0;
 }
 
-.post-show-right-edit h2 {
+.post-show-right-container h2 {
   font-size: 16px;
   font-weight: 500;
   color: #000000;
 }
 
-.post-show-right-header > img {
+.post-show-photo-user {
+  display: flex;
+  align-items: center;
+}
+.post-show-photo-user > img {
   height: 39px;
   width: 39px;
   border-radius: 50%;
@@ -64,12 +70,20 @@
   box-sizing: border-box;
 }
 
+.trash-icon {
+  height: 25px;
+  width: 25px;
+}
 .post-show-right-bottom {
   width: 100%
 }
 
-.post-show-comments {
+.post-show-body {
+  display: flex;
+}
 
+.post-show-body > p {
+  margin-left: 10px;
 }
 
 .post-show-icons {

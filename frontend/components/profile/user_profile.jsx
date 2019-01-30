@@ -26,7 +26,7 @@ class UserProfile extends React.Component {
     let userPosts;
     if (this.props.user && this.props.user.post_ids) {
       userPosts = this.props.user.post_ids.map(post_id => {
-        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} />;
+        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)} />;
       }).reverse();
     }
 

@@ -4,7 +4,8 @@ import NavBar from './nav_bar';
 
 const msp = (state) => {
   return {
-    searchedUsers: Object.values(state.searched)
+    searchedUsers: Object.values(state.searched),
+    users: state.entities.users
   };
 };
 

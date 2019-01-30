@@ -3,7 +3,7 @@ json.users do
       if @user.id == current_user.id
         json.extract! @user, :email, :full_name
       end
-      json.extract! @user, :id, :username, :bio, :website
+      json.extract! @user, :id, :username, :bio, :website, :full_name
       json.photoUrl url_for(@user.photo)
     end
 end

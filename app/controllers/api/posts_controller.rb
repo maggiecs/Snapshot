@@ -30,17 +30,17 @@ class Api::PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       render "api/posts/show"
     else
        render json: @post.errors.full_messages, status: 422
     end
   end
 
-  def delete
+  def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    render "api/posts/index"
+    render "api/posts/show"
   end
 
   private
@@ -48,5 +48,5 @@ class Api::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:body, :photo)
   end
-
 end
+
