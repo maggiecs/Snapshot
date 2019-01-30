@@ -14,6 +14,8 @@ import PostIndexContainer from './post/post_index_container';
 import UploadContainer from './profile/upload_container';
 import MainProfileContainer from './profile/main_profile_container';
 import UserProfileContainer from './profile/user_profile_container';
+import EditPostFormContainer from './post/edit_post_container';
+
 import Modal from './modal/modal';
 const App = () => (
   <div>
@@ -27,6 +29,7 @@ const App = () => (
       <ProtectedRoute exact path="/upload" component={UploadContainer} />
       <ProtectedRoute exact path="/profile" component={MainProfileContainer} />
       <ProtectedRoute exact path="/users/:id" component={UserProfileContainer} />
+      <ProtectedRoute exact path="/posts/:id/edit" component={EditPostFormContainer} />
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <AuthRoute exact path="/" component={SplashFormContainer} />

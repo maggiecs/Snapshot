@@ -7,31 +7,43 @@ class Post extends React.Component {
     this.state = {
      
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
   }
 
-  handleInput(e) {
-    this.setState({ body: e.currentTarget.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('post[body]', this.state.body);
-    if (this.state.photoFile) {
-      formData.append('post[photo]', this.state.photoFile);
+  renderEditButton() {
+    if (this.props.user.id === this.props.currentUser.id) {
+      return (
+        <div className="post-show-right-edit">
+          <h2>{this.props.user.username}</h2>
+          <Link to={`posts/${this.props.post.id}/edit`} onClick={() => this.props.closeModal()}>Edit Post</Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="post-show-right-edit">
+          <h2>{this.props.user.username}</h2>
+        </div>
+      );
     }
-    this.props.createPost(formData);
   }
 
+  renderDeleteButton() {
+    if (this.props.user.id === this.props.currentUser.id) {
+      return (
+        <div className="trash-icon">
+          <img src={window.trash_iconURL} onClick={() => this.props.deletePost(this.props.post.id)
+            .then(this.props.closeModal())} />
+        </div>
+      );
+    } else {
+      <div className="trash-icon">
+      </div>
+      };
+  }
   render() {
-  
-   
     return (
       <div className="post-show-container">
         <div className="post-show-container-img">
@@ -39,14 +51,18 @@ class Post extends React.Component {
         </div>
         <div className="post-show-right-container">
           <div className="post-show-right-header">
-            <img src={this.props.post.photoUrl}  />
-            <div className="post-show-right-edit">
-              <h2>{this.props.user.username}</h2>
-              <Link to={`post/${this.props.post.id}/edit`}>Edit Post</Link>
+            <div className="post-show-photo-user">
+              <img src={this.props.post.photoUrl}  />
+              {this.renderEditButton()}
             </div>
+              {this.renderDeleteButton()}
           </div>
           <div className="post-show-right-bottom">
             <div className="post-show-comments">
+              <div className="post-show-body">
+                <h2>{this.props.user.username}</h2>
+                <p>{this.props.post.body}</p>
+              </div>
               <p>INSERT COMMENT HERE</p>
               <p>INSERT COMMENT HERE</p>
             </div>

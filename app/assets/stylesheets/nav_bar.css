@@ -2,6 +2,7 @@
   background: #fff;
   color: #000;
   border-bottom: 1px solid #f0f0f0;
+  
 }
 
 .header-nav {
@@ -71,4 +72,65 @@
 
 .logo-name {
   font-size: 35px;
+}
+
+.div {
+  z-index: 0;
+}
+.nav-searched-user-list {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  align-items: center;
+  /* position: absolute;*/
+  z-index: 50;
+  /* top: 10%; 
+  left: 35%; */
+}
+
+.nav-searched-user {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+}
+
+.nav-searched-user:first-child {
+  border-radius: 5px 5px 0px 0px
+}
+
+.nav-searched-user:last-child {
+  border-radius: 0px 0px 5px 5px
+}
+
+.nav-searched-user:hover {
+  background-color: #fafafa;
+}
+
+.nav-search-user-img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.nav-search-user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.nav-search-user-username {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-search-user-fullname {
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
 }

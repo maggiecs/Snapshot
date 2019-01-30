@@ -10,8 +10,10 @@ const msp = (state) => {
   if (post) {
     user = state.entities.users[post.author_id];
   }
+  const currentUser = state.entities.users[state.session.id];
 
   return {
+    currentUser: currentUser,
     user: user,
     post: post,
     postId: state.ui.displayPost
