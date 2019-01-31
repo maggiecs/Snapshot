@@ -5,6 +5,6 @@
       json.photoUrl url_for(user.photo)
      else
         json.photoUrl default_url
-    end
+    end 
   end
 end

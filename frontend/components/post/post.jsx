@@ -34,7 +34,7 @@ class Post extends React.Component {
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <div className="trash-icon">
-          <img src={window.trash_iconURL} onClick={() => this.props.deletePost(this.props.post.id)
+          <img src={window.trash_iconURL} onClick={() => this.props.deletePost(this.props.post.id, this.props.currentUser.id)
             .then(this.props.closeModal())} />
         </div>
       );

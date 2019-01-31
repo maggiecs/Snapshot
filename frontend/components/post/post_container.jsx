@@ -23,7 +23,7 @@ const msp = (state) => {
 const mdp = dispatch => {
   return {
     fetchPost: (id) => dispatch(fetchPost(id)),
-    deletePost: (id) => dispatch(deletePost(id)),
+    deletePost: (id, userId) => dispatch(deletePost(id, userId)),
     updatePost: (id) => dispatch(updatePost(id)),
     closeModal: () => dispatch(closeModal())
   };

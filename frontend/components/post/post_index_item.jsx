@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentContainer from '../comment/comment_container';
 
 const PostIndexItem = ({ post, users }) => {
+  
   return (
     <div className="post-index-image-box">
       <div className="post-index-image-header">
@@ -32,6 +34,7 @@ const PostIndexItem = ({ post, users }) => {
           <p>INSERT COMMENTS HERE</p>
           <p>INSERT COMMENTS HERE</p>
           <p>INSERT COMMENTS HERE</p>
+          <CommentContainer post={post} />
         </div>
         <div className="post-index-image-add-comment">
           <textarea placeholder="Add a comment..."></textarea>

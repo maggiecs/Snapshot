@@ -1,12 +1,20 @@
 class Api::CommentsController < ApplicationController
   
   def index
-    @comments = Post.where(post_id: params[:id])
+    # @comments = Post.where(id: params[:post_id]).comments
+    if params[:post_id]
+      @post = Post.find(params[:post_id])
+      @comments = @post.comments
+      render "api/comments/index"
+    else
+      @comments = Comment.where(post_id: params[:post_id])
+      render "api/comments/index"
+    end
   end
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.author_id = current_user.id
     @comment.save
     render "api/comments/show"
   end
