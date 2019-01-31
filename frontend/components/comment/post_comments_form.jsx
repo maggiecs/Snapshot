@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class CommentForm extends React.Component {
+class PostCommentsForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,15 +35,15 @@ class CommentForm extends React.Component {
       postComments = post.comment_ids.map(comment_id => {
         if (comments[comment_id] && currentUser.id === comments[comment_id].author_id) {
           return (
-            <div key={comment_id} className="comment-list-item">
-              <div className="comment-username-body">
-                <div className="comment-username">
-                  <Link className="comment-author" 
-                        to={`/users/${comments[comment_id].author_id}`}>
-                        <p>{users[comments[comment_id].author_id].username}</p>
+            <div key={comment_id} className="post-comment-list-item">
+              <div className="post-comment-username-body">
+                <div className="post-comment-username">
+                  <Link className="post-comment-author"
+                    to={`/users/${comments[comment_id].author_id}`}>
+                    <p>{users[comments[comment_id].author_id].username}</p>
                   </Link>
                 </div>
-                <div className="comment-text">
+                <div className="post-comment-text">
                   <p>{comments[comment_id].body}</p>
                 </div>
               </div>
@@ -53,36 +53,44 @@ class CommentForm extends React.Component {
               </div>
             </div>
           )
-        } else if (comments[comment_id]) {
+        } else if (comments[comment_id] && comments[comment_id].author_id) {
           return (
-            <div key={comment_id} className="comment-list-item">
-              <div className="comment-username">
-                <Link className="comment-author"
+            <div key={comment_id} className="post-comment-list-item">
+              <div className="post-comment-username">
+                <Link className="post-comment-author"
                   to={`/users/${comments[comment_id].author_id}`}>
                   <p>{users[comments[comment_id].author_id].username}</p>
                 </Link>
               </div>
-              <div className="comment-text">
+              <div className="post-comment-text">
                 <p>{comments[comment_id].body}</p>
               </div>
             </div>
-          )}
+          )
+        }
       });
     }
 
     return (
-      <div className="comment-container">
-        <form className="comment-form" onSubmit={this.handleSubmit.bind(this)}>
-          <div className="comment-body">
+      <div className="post-comment-container">
+        <form className="post-comment-form" onSubmit={this.handleSubmit.bind(this)}>
+          <div className="post-comment-body">
             {postComments}
-            <div className="comment-add-comment-box">
-              <div className="comment-add-comment">
+            <div className="post-show-icons">
+              <i className="far fa-heart"></i>
+              <i className="far fa-comment"></i>
+            </div>
+            <div className="post-show-likes">
+              <p>100 likes</p>
+            </div>
+            <div className="post-comment-add-comment-box">
+              <div className="post-comment-add-comment">
                 <textarea type="text"
                   value={this.state.body}
                   onChange={this.handleInput}
                   placeholder="Add a comment..."></textarea>
               </div>
-              <div className="comment-submit-button">
+              <div className="post-comment-submit-button">
                 <input type="submit" value="Post" />
               </div>
             </div>
@@ -94,4 +102,4 @@ class CommentForm extends React.Component {
 
 }
 
-export default CommentForm;
+export default PostCommentsForm;
