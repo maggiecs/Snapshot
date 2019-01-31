@@ -7,13 +7,14 @@
 }
 
 .comment-body {
-
+  overflow: hidden;
 }
 
 .comment-username-body {
   display: flex;
   align-content: center;
   width: 550px;
+   overflow-y: scroll;
 }
 
 .comment-list-item {
