@@ -25,6 +25,7 @@
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
+  border-radius: 3px 3px 0px 0px;
 }
 .post-index-author-img {
   height: 40px;
@@ -61,14 +62,30 @@
   display: block;
   border: 1px solid #e6e6e6;
   padding: 0 20px;
+  border-radius: 0px 0px 3px 3px;
 }
 
 .post-index-image-icons {
+  margin-top: 10px;
+  margin-bottom: 10x;
+  font-size: 20px;
+  
+}
 
+.post-index-image-icons > i {
+  margin-right: 10px;
+}
+
+.post-index-image-likes {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .post-index-image-body {
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .post-index-author {
@@ -87,13 +104,6 @@
   border-top: 1px solid #e6e6e6;
   padding: 15px 0px;
   box-sizing: border-box;
-}
-
-.post-index-image-add-comment textarea {
-  resize: none;
-  height: 18px;
-  width: 582px;
- 
 }
 
 

@@ -18,7 +18,7 @@
 
 }
 
-.nav-search-container img {
+.nav-search-icon {
   height: 20px;
   width: auto;
   padding: 5px;
@@ -79,7 +79,7 @@
 .div {
   z-index: 0;
 }
-.nav-searched-user-list {
+.nav-search-user-list {
   display: flex;
   flex-direction: column;
   font-family: Roboto, sans-serif;
@@ -89,7 +89,7 @@
   top: 50px;
 }
 
-.nav-searched-user {
+.nav-search-user {
   display: flex;
   flex-direction: row;
   width: 250px;
@@ -98,15 +98,7 @@
   border: 1px solid #e6e6e6;
 }
 
-.nav-searched-user:first-child {
-  border-radius: 5px 5px 0px 0px
-}
-
-.nav-searched-user:last-child {
-  border-radius: 0px 0px 5px 5px
-}
-
-.nav-searched-user:hover {
+.nav-search-user:hover {
   background-color: #fafafa;
 }
 
