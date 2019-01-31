@@ -1,5 +1,7 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
+
 import merge from 'lodash/merge';
 
 const postsReducer = (state = {}, action) => {
@@ -11,6 +13,10 @@ const postsReducer = (state = {}, action) => {
       return merge({}, state, { [action.post.id]: action.post });
     case RECEIVE_USER_POSTS:
       return merge({}, state, action.payload.posts);
+    case RECEIVE_COMMENT:
+      let newerState = merge({}, state);
+      newerState[action.comment.post_id].comment_ids.push(action.comment.id);
+      return merge({}, state, newerState);
     case LOGOUT_CURRENT_USER:
       return {};
     case REMOVE_POST:

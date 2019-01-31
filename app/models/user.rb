@@ -8,6 +8,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  full_name       :string
+#  email           :string           not null
+#  bio             :text
+#  website         :string
 #
 
 class User < ApplicationRecord
