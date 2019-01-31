@@ -30,14 +30,7 @@ const PostIndexItem = ({ post, users }) => {
           <p>{post.body}</p>
         </div>
         <div className="post-index-image-comments">
-          <p>INSERT COMMENTS HERE</p>
-          <p>INSERT COMMENTS HERE</p>
-          <p>INSERT COMMENTS HERE</p>
-          <p>INSERT COMMENTS HERE</p>
           <CommentContainer post={post} />
-        </div>
-        <div className="post-index-image-add-comment">
-          <textarea placeholder="Add a comment..."></textarea>
         </div>
       </div>
     </div>

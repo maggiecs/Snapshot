@@ -2,12 +2,10 @@ import { createComment, deleteComment, fetchComments } from '../../actions/comme
 import { connect } from 'react-redux';
 import CommentForm from './comment_form';
 
-const msp = ({ session, entities: { users, posts, comments } }) => {
-  // debugger
+const msp = ({ session, entities: { users, comments } }) => {
   return {
     currentUser: users[session.id],
     users: users,
-    // posts: posts,
     comments: comments,
   };
 };
@@ -16,7 +14,7 @@ const mdp = dispatch => {
   return {
     fetchUserComments: (postId) => dispatch(fetchComments(postId)),
     createComment: (comment) => dispatch(createComment(comment)),
-    deleteComment: (id) => dispatch(deleteComment(id))
+    deleteComment: (id, postId) => dispatch(deleteComment(id, postId))
   };
 };
 
