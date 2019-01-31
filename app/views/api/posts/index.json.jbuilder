@@ -13,6 +13,12 @@
         json.extract! comment, :id, :body, :post_id, :author_id
       end
     end
+    
+    json.users do
+      json.set! comment.author_id do
+        json.extract! comment.author, :id, :username
+      end
+    end
   end
 
   json.users do

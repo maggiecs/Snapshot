@@ -10,6 +10,12 @@
 
 }
 
+.comment-username-body {
+  display: flex;
+  align-content: center;
+  width: 550px;
+}
+
 .comment-list-item {
   display: flex;
   margin-top: 5px;
@@ -24,11 +30,15 @@
 .comment-username {
   font-weight: 500;
   padding-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .comment-text {
-  display: block;
   word-wrap: break-word;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: lighter;
   width: 500px;
 }
 

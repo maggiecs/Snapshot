@@ -26,29 +26,48 @@ class CommentForm extends React.Component {
   render() {
     let postComments;
     const comments = this.props.comments;
-    if (this.props.post && this.props.post.comment_ids) {
-      postComments = this.props.post.comment_ids.map(comment_id => {
-        if (this.props.currentUser.id === this.props.comments[comment_id].author_id) {
+    const currentUser = this.props.currentUser;
+    const users = this.props.users;
+    const deleteComment = this.props.deleteComment;
+    const post = this.props.post;
+
+    if (post && post.comment_ids) {
+      postComments = post.comment_ids.map(comment_id => {
+        debugger
+        if (currentUser.id === comments[comment_id].author_id) {
+          return (
+            <div key={comment_id} className="comment-list-item">
+              <div className="comment-username-body">
+                <div className="comment-username">
+                  <Link className="comment-author" 
+                        to={`/users/${comments[comment_id].author_id}`}>
+                        <p>{users[comments[comment_id].author_id].username}</p>
+                  </Link>
+                </div>
+                <div className="comment-text">
+                  <p>{comments[comment_id].body}</p>
+                </div>
+              </div>
+              <div className="trash-icon">
+                <img src={window.trash_iconURL}
+                  onClick={() => deleteComment(comment_id, post.id)} />
+              </div>
+            </div>
+          )
+        } else {
           return (
             <div key={comment_id} className="comment-list-item">
               <div className="comment-username">
-                <Link className="comment-author" 
-                      to={`/users/${comments[comment_id].author_id}`}>
-                      <p>{this.props.users[comments[comment_id].author_id].username}</p>
+                <Link className="comment-author"
+                  to={`/users/${comments[comment_id].author_id}`}>
+                  <p>{users[comments[comment_id].author_id].username}</p>
                 </Link>
               </div>
               <div className="comment-text">
                 <p>{comments[comment_id].body}</p>
               </div>
-              <div className="trash-icon">
-                <img src={window.trash_iconURL}
-                  onClick={() => this.props.deleteComment(comment_id, this.props.post.id)} />
-              </div>
             </div>
-          )
-        } else {
-          return <li key={comment_id}>{comments[comment_id].body}</li>;
-        }
+          )}
       }).reverse();
     }
 
