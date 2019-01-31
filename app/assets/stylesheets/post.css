@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  width: 100%;
+  width: 360px;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
@@ -55,6 +55,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #000000;
+  /* width: 300px; */
 }
 
 .post-show-photo-user {
@@ -70,7 +71,7 @@
   box-sizing: border-box;
 }
 
-.trash-icon {
+.post-trash-icon {
   height: 25px;
   width: 25px;
 }
@@ -99,4 +100,8 @@
 
 .post-show-add-comment textarea {
   resize: none;
+}
+
+.post-show-comments {
+  /* width: 300px; */
 }

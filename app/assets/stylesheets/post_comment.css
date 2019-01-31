@@ -1,49 +1,49 @@
-.comment-container {
+.post-comment-container {
 
 }
 
-.comment-form {
+.post-comment-form {
 
 }
 
-.comment-body {
+.post-comment-body {
 
 }
 
-.comment-username-body {
+.post-comment-username-body {
   display: flex;
   align-content: center;
-  width: 550px;
-}
+  /* width: 550px; */
+} 
 
-.comment-list-item {
+.post-comment-list-item {
   display: flex;
   margin-top: 5px;
   margin-bottom: 5px;
+  align-items: center;
 }
 
-.comment-items {
+.post-comment-items {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
-.comment-username {
+.post-comment-username {
   font-weight: 500;
   padding-right: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.comment-text {
+.post-comment-text {
   word-wrap: break-word;
   margin-top: 5px;
   margin-bottom: 5px;
   font-weight: lighter;
-  width: 500px;
-}
+  width: 200px;
+} 
 
 .trash-icon {
-  margin-top: 5px;
   margin-left: 10px;
 }
 
@@ -53,29 +53,30 @@
 .trash-icon img {
   height: 15px;
   width: 15px;
+  margin-top: 5px;
 }
 
-.comment-add-comment-box {
+.post-comment-add-comment-box {
   border-top: 1px solid #e6e6e6;
   display: flex;
   align-items: center;
 }
 
-.comment-add-comment {
+.post-comment-add-comment {
   padding: 15px 0px;
   box-sizing: border-box;
-  width: 510px;
+  width: 85%;
   display: flex;
 }
 
-.comment-add-comment > textarea {
+.post-comment-add-comment > textarea {
   resize: none;
   padding-top: 5px;
   height: 30px;
-  width: 510px;
+  width: 200px;
 }
 
-.comment-submit-button {
-  padding-left: 22px;
+.post-comment-submit-button {
+  /* padding-left: 22px; */
   color: #3897f0
-}
+} 
