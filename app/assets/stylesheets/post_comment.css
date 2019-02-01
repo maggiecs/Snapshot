@@ -16,6 +16,7 @@
 #post-comment-body-top {
   overflow: auto;
   height: 490px;
+  width:
 }
 
 .post-comment-icons {
@@ -66,7 +67,7 @@
 } 
 
 .trash-icon {
-  margin-left: 10px;
+  display: block;
 }
 
 .trash-icon:hover {
