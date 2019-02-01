@@ -10,7 +10,6 @@
   json.users do
     json.set! post.author_id do
       json.extract! post.author, :id, :username
-      json.photoUrl url_for(post.author.photo)
       if post.author.photo.attached?
         json.photoUrl url_for(post.author.photo)
       else
