@@ -67,6 +67,7 @@
 
 .trash-icon {
   display: block;
+  margin-right: 10px;
 }
 
 .trash-icon:hover {
@@ -75,7 +76,6 @@
 .trash-icon img {
   height: 15px;
   width: 15px;
-  margin-top: 5px;
 }
 
 .post-comment-add-comment-box {
