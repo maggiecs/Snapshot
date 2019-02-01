@@ -15,7 +15,8 @@
 .nav-search-container {
   display: flex;
   position: relative;
-
+  font-family: Roboto, sans-serif;
+  font-weight: lighter; 
 }
 
 .nav-search-icon {
