@@ -1,7 +1,7 @@
 # README
 
 
-Live site: [SNAPSHOT](https://snapshot-mc.herokuapp.com/#/)
+Live site: [Snapshot](https://snapshot-mc.herokuapp.com/#/)
 
 Snapshot, an Instagram clone, is a photo sharing application that allows users to publicly share their photos. Users can update their profile, upload photos, and comment on each others posts.
 
