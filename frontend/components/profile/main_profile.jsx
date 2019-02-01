@@ -41,9 +41,9 @@ class MainProfile extends React.Component {
               <p><b>100 </b>following</p>
             </div>
             <div className="main-profile-header-bottom">
-              <p>{this.props.currentUser.full_name}</p>
+              <p><b>{this.props.currentUser.full_name}</b></p>
               <p>{this.props.currentUser.bio}</p>
-              <p>{this.props.currentUser.website}</p>
+              <p><b>{this.props.currentUser.website}</b></p>
             </div>
           </div>
         </div>

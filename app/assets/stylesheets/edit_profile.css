@@ -101,6 +101,7 @@
 
 .user-username-bio textarea {
   resize: none;
+   font-family: 'Roboto', sans-serif;
 }
 
 .user-submit {
