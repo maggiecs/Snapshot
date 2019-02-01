@@ -77,6 +77,8 @@
 .trash-icon img {
   height: 15px;
   width: 15px;
+  position: relative;
+  right: 25px;
 }
 
 .post-comment-add-comment-box {
