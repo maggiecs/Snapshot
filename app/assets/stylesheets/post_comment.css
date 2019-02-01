@@ -68,7 +68,7 @@
 .trash-icon {
   display: block;
   position: relative;
-  right: 25px;
+  /* right: 25px; */
 }
 
 .trash-icon:hover {
