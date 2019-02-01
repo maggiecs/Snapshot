@@ -108,6 +108,7 @@ class SessionForm extends React.Component {
           </div>
         </div>
 
+     
         <footer className="footer">
           <nav className="login-bottom-nav">
             <ul className="login-bottom-links">
@@ -119,7 +120,9 @@ class SessionForm extends React.Component {
             &copy; 2019 SNAPSHOT
           </small>
         </footer>
-    </div>
+      </div>
+    
+    
       
     );
   }

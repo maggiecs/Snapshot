@@ -118,13 +118,15 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  width: 900px;
-  margin: 0 auto;
+  justify-content: space-around;
+  width: 100%;
+  margin: 20px auto;
   font-size: 13px;
-  padding: 40px;
+  margin: 40px;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  align-items: center;
+  vertical-align: bottom;
 }
 
 
@@ -138,7 +140,6 @@
   width: 200px;
   justify-content: space-between;
   margin: 0px auto;
-  padding-bottom: 40px;
   color: #003569;
   
 }

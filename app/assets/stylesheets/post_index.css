@@ -57,7 +57,6 @@
 }
 
 .post-index-image-bottom {
-  /* height: 200px; */
   background: #ffffff;
   display: block;
   border: 1px solid #e6e6e6;
@@ -85,7 +84,7 @@
 .post-index-image-body {
   display: flex;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .post-index-author {
@@ -94,6 +93,7 @@
 
 .post-index-image-body > p {
   padding-left: 5px;
+  font-weight: lighter;
 }
 
 .post-index-image-comments {
