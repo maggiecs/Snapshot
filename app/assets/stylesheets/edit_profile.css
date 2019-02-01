@@ -99,6 +99,10 @@
   vertical-align: 30px;
 }
 
+.user-username-bio textarea {
+  resize: none;
+}
+
 .user-submit {
   background-color: #3897f0;
   border-radius: 5px;
