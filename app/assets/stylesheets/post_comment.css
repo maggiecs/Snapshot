@@ -1,5 +1,5 @@
 .post-comment-container {
-
+  height: 490px;
 }
 
 .post-comment-form {
@@ -7,7 +7,30 @@
 }
 
 .post-comment-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 490px;
+}
 
+#post-comment-body-top {
+  overflow: auto;
+  height: 490px;
+}
+
+.post-comment-icons {
+  border-top: 1px solid #e6e6e6;
+}
+.post-comment-icons i {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.post-comment-likes {
+  /* padding-top: 10px; */
+  padding-bottom: 10px;
 }
 
 .post-comment-username-body {
@@ -20,7 +43,6 @@
   display: flex;
   margin-top: 5px;
   margin-bottom: 5px;
-  align-items: center;
 }
 
 .post-comment-items {
@@ -40,7 +62,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
   font-weight: lighter;
-  width: 200px;
+  width: 225px;
 } 
 
 .trash-icon {

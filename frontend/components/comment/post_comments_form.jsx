@@ -71,27 +71,38 @@ class PostCommentsForm extends React.Component {
       });
     }
 
+    let height = 0;
+    $('#post-comment-body-top div').each(function (i, value) {
+      height += parseInt($(this).height());
+    });
+    height += '';
+    $('#post-comment-body-top').animate({ scrollTop: height });
+
     return (
       <div className="post-comment-container">
         <form className="post-comment-form" onSubmit={this.handleSubmit.bind(this)}>
           <div className="post-comment-body">
-            {postComments}
-            <div className="post-show-icons">
-              <i className="far fa-heart"></i>
-              <i className="far fa-comment"></i>
+            <div id="post-comment-body-top">
+              {postComments}
             </div>
-            <div className="post-show-likes">
-              <p>100 likes</p>
-            </div>
-            <div className="post-comment-add-comment-box">
-              <div className="post-comment-add-comment">
-                <textarea type="text"
-                  value={this.state.body}
-                  onChange={this.handleInput}
-                  placeholder="Add a comment..."></textarea>
+            <div className="post_comment-body-bottom">
+              <div className="post-comment-icons">
+                <i className="far fa-heart"></i>
+                <i className="far fa-comment"></i>
               </div>
-              <div className="post-comment-submit-button">
-                <input type="submit" value="Post" />
+              <div className="post-comment-likes">
+                <p>100 likes</p>
+              </div>
+              <div className="post-comment-add-comment-box">
+                <div className="post-comment-add-comment">
+                  <textarea type="text"
+                    value={this.state.body}
+                    onChange={this.handleInput}
+                    placeholder="Add a comment..."></textarea>
+                </div>
+                <div className="post-comment-submit-button">
+                  <input type="submit" value="Post" />
+                </div>
               </div>
             </div>
           </div>

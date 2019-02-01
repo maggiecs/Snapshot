@@ -41,14 +41,14 @@ class UserProfile extends React.Component {
               <h2>{this.props.user.username}</h2>
             </div>
             <div className="main-profile-header-middle">
-              <p>posts</p>
-              <p>followers</p>
-              <p>following</p>
+              <p><b>100 </b>posts</p>
+              <p><b>100 </b>followers</p>
+              <p><b>100 </b>following</p>
             </div>
             <div className="main-profile-header-bottom">
-              <p>{this.props.user.full_name}</p>
+              <p><b>{this.props.user.full_name}</b></p>
               <p>{this.props.user.bio}</p>
-              <p>{this.props.user.website}</p>
+              <p><b>{this.props.user.website}</b></p>
             </div>
           </div>
         </div>

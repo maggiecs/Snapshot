@@ -36,9 +36,9 @@ class MainProfile extends React.Component {
               <button className="logout-button" onClick={this.props.logout}>Log Out</button>
             </div>
             <div className="main-profile-header-middle">
-              <p>posts</p>
-              <p>followers</p>
-              <p>following</p>
+              <p><b>100 </b>posts</p>
+              <p><b>100 </b>followers</p>
+              <p><b>100 </b>following</p>
             </div>
             <div className="main-profile-header-bottom">
               <p>{this.props.currentUser.full_name}</p>

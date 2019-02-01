@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CommentContainer from '../comment/comment_container';
 
 const PostIndexItem = ({ post, users }) => {
-  
+
   return (
     <div className="post-index-image-box">
       <div className="post-index-image-header">

@@ -43,10 +43,12 @@ class NavBar extends React.Component {
       
       <header className="header">
         <ul className="header-nav">
-          <li className="nav-logo">
-            <Link to="/"><i className="fab fa-instagram"></i></Link>
-            <Link to="/"><p className="logo-name">Snapshot</p></Link>
-            {/* <img src={window.header_logoURL} /></Link> */}
+          <li>
+            <div className="nav-logo">
+              <Link to="/"><i className="fab fa-instagram"></i></Link>
+              <Link to="/"><p className="logo-name">Snapshot</p></Link>
+              {/* <img src={window.header_logoURL} /></Link> */}
+            </div>
           </li>
           <li className="nav-search-container">
             <img className="nav-search-icon" src={window.search_iconURL} />
