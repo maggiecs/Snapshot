@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Live site: [SNAPSHOT](https://snapshot-mc.herokuapp.com/#/)
 
-* Ruby version
+Snapshot, an Instagram clone, is a photo sharing application that allows users to publicly share their photos. Users can update their profile, upload photos, and comment on each others posts.
 
-* System dependencies
+### Technologies Used
 
-* Configuration
+Snapshot is built on a Ruby on Rails backend with a React-Redux frontend.
 
-* Database creation
+Amazon Web Services is used to store images.
 
-* Database initialization
+### Features and Functionality
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User Authentication - Users are able to log in to Snapshot and have access to exclusive Snapshot features.
+Posts - Authenticated users are able to create, edit, and delete post.
+Comments - Authenticated users are able to add and delete comments on posts.
+Search - Any user on Instagram can search for other users; profile.
