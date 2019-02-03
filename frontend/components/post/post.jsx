@@ -26,7 +26,9 @@ class Post extends React.Component {
     } else {
       return (
         <div className="post-show-right-edit">
-          <h2>{this.props.user.username}</h2>
+          <Link to={`/users/${this.props.user.id}`}>
+            <h2>{this.props.user.username}</h2>
+          </Link>
         </div>
       );
     }
@@ -49,19 +51,7 @@ class Post extends React.Component {
     const comments = this.props.comments;
     const users = this.props.users;
     const post = this.props.post;
-    // const postComments = comments.map(comment => {
-    //   if (users[comment.author_id]) {
-    //   return (
-        //   <div className="post-comments">
-        //   <span className="post-comment-username">
-        //     {users[comment.author_id].username}
-        //   </span>
-        //   <li>{comment.body}</li>
-        // </div>
-        // <PostCommentsContainer post={post} />
-    //   );
-    //   }
-    // });
+
     return (
       <div className="post-show-container">
         <div className="post-show-container-img">
@@ -75,29 +65,17 @@ class Post extends React.Component {
             </div>
               {this.renderDeleteButton()}
           </div>
-          <div className="post-show-right-bottom">
-            <div className="post-show-comments">
-              {/* <div className="post-show-body">
-                <h2>{this.props.user.username}</h2>
-                <p>{this.props.post.body}</p>
-              </div>  */}
-            </div>
-           
-            
+          <div className="post-show-right-bottom">   
             <div className="post-show-comments">
               <div className="post-show-body">
-                <h2>{this.props.user.username}</h2>
+                <div className="post-show-username">
+                  <Link to={`/users/${this.props.user.id}`}>
+                    <h2>{this.props.user.username}</h2>
+                  </Link>
+                </div>
                 <p>{this.props.post.body}</p>
               </div>
-              {/* {postComments} */}
-              {/* <div className="post-show-icons">
-                <i className="far fa-heart"></i>
-                <i className="far fa-comment"></i>
-              </div>
-              <div className="post-show-likes">
-                <p>100 likes</p>
-              </div> */}
-               
+              
               <PostCommentsContainer post={post} />
             </div>
            </div>
