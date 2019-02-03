@@ -19,17 +19,13 @@
 }
 
 .post-comment-icons {
-  border-top: 1px solid #e6e6e6;
-}
-.post-comment-icons i {
   padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  font-size: 20px;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
 }
 
 .post-comment-likes {
-  /* padding-top: 10px; */
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 

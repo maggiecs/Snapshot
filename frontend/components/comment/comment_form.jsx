@@ -77,10 +77,10 @@ class CommentForm extends React.Component {
             {postComments}
             <div className="comment-add-comment-box">
               <div className="comment-add-comment">
-                <textarea type="text"
+                <input id={`post-${post.id}-input`} type="text"
                   value={this.state.body}
                   onChange={this.handleInput}
-                  placeholder="Add a comment..."></textarea>
+                  placeholder="Add a comment..."/>
               </div>
               <div className="comment-submit-button">
                 <input type="submit" value="Post" />

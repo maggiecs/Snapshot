@@ -24,6 +24,16 @@ class Post < ApplicationRecord
     class_name: 'Comment',
     dependent: :destroy
 
+  has_many :likes,
+    primary_key: :id,
+    foreign_key: :post_id,
+    class_name: 'Like'
+
+  
+  has_many :likers,
+    through: :likes,
+    class_name: 'User'
+
   has_one_attached :photo
 
   # def ensure_photo

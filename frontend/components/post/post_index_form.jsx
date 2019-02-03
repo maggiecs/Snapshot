@@ -10,13 +10,25 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+
   render() {
-    const posts = this.props.posts.map(post => {
+    const {
+      posts,
+      users,
+      currentUser,
+      createPostLike,
+      deletePostLike,
+    } = this.props;
+
+    const indexPosts = posts.map(post => {
       return (
         <PostIndexItem
           key={post.id}
           post={post} 
-          users={this.props.users}
+          users={users}
+          currentUser={currentUser}
+          createPostLike={createPostLike}
+          deletePostLike={deletePostLike}
         />
       );
     }).reverse();
@@ -24,7 +36,7 @@ class PostIndex extends React.Component {
     return (
       <div className="post-index-container">
         <div className="post-index-images">
-        {posts}
+        {indexPosts}
         </div>
       </div>  
     );

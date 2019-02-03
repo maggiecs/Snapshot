@@ -67,19 +67,29 @@
 .post-index-image-icons {
   margin-top: 10px;
   margin-bottom: 10x;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
   
 }
 
-.post-index-image-icons > i {
+.post-index-image-icons > img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.full-heart-icon, .empty-heart-icon, .comment-icon {
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
 }
 
 .post-index-image-likes {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: lighter;
 }
+
 
 .post-index-image-body {
   display: flex;
