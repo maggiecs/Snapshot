@@ -47,8 +47,8 @@ class CommentForm extends React.Component {
                   <p>{comments[comment_id].body}</p>
                 </div>
               </div>
-              <div className="trash-icon">
-                <img src={window.trash_iconURL}
+              <div className="xmark-icon">
+                <img src={window.xmark_iconURL}
                   onClick={() => deleteComment(comment_id, post.id)} />
               </div>
             </div>
