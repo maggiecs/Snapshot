@@ -16,7 +16,9 @@ class MainProfile extends React.Component {
 
   render() {
     let userPosts;
+    let numPosts;
     if (this.props.currentUser.post_ids) {
+      numPosts = this.props.currentUser.post_ids.length;
       userPosts = this.props.currentUser.post_ids.map(post_id => {
         return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)}/>;
       }).reverse();
@@ -36,7 +38,7 @@ class MainProfile extends React.Component {
               <button className="logout-button" onClick={this.props.logout}>Log Out</button>
             </div>
             <div className="main-profile-header-middle">
-              <p><b>100 </b>posts</p>
+              <p><b>{numPosts} </b>posts</p>
               <p><b>100 </b>followers</p>
               <p><b>100 </b>following</p>
             </div>

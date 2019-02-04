@@ -24,7 +24,9 @@ class UserProfile extends React.Component {
 
   render() {
     let userPosts;
+    let numPosts;
     if (this.props.user && this.props.user.post_ids) {
+      numPosts = this.props.user.post_ids.length;
       userPosts = this.props.user.post_ids.map(post_id => {
         return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)} />;
       }).reverse();
@@ -41,7 +43,7 @@ class UserProfile extends React.Component {
               <h2>{this.props.user.username}</h2>
             </div>
             <div className="main-profile-header-middle">
-              <p><b>100 </b>posts</p>
+              <p><b>{numPosts} </b>posts</p>
               <p><b>100 </b>followers</p>
               <p><b>100 </b>following</p>
             </div>
