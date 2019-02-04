@@ -51,10 +51,15 @@
 }
 
 .post-show-right-container h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #000000;
   /* width: 300px; */
+}
+
+.post-show-right-container p {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .post-show-photo-user {
@@ -80,10 +85,13 @@
 
 .post-show-body {
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .post-show-body > p {
   margin-left: 10px;
+ font-weight: 400;
 }
 
 /* .post-show-icons {

@@ -39,21 +39,8 @@
   word-wrap: break-word;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-weight: lighter;
+  font-weight: 400;
   width: 500px;
-}
-
-.trash-icon {
-  margin-top: 5px;
-  margin-left: 10px;
-}
-
-.trash-icon:hover {
-  cursor: pointer;
-}
-.trash-icon img {
-  height: 15px;
-  width: 15px;
 }
 
 .comment-add-comment-box {
@@ -69,11 +56,12 @@
   display: flex;
 }
 
-.comment-add-comment > textarea {
+.comment-add-comment > input {
   resize: none;
   padding-top: 5px;
   height: 30px;
   width: 510px;
+  font-weight: 400;
 }
 
 .comment-submit-button {

@@ -87,7 +87,7 @@
 .post-index-image-likes {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 
@@ -103,7 +103,7 @@
 
 .post-index-image-body > p {
   padding-left: 5px;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .post-index-image-comments {

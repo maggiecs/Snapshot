@@ -37,8 +37,8 @@
 
 .post-comment-list-item {
   display: flex;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .post-comment-items {
@@ -57,14 +57,14 @@
   word-wrap: break-word;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-weight: lighter;
+  font-weight: 400;
   width: 225px;
 } 
 
 .xmark-icon {
   display: block;
   position: relative;
-  right: 25px;
+  right: 15px;
   padding-top: 7px;
 }
 
@@ -80,6 +80,7 @@
   border-top: 1px solid #e6e6e6;
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 
 .post-comment-add-comment {
@@ -89,11 +90,12 @@
   display: flex;
 }
 
-.post-comment-add-comment > textarea {
+.post-comment-add-comment > input {
   resize: none;
   padding-top: 5px;
   height: 30px;
-  width: 200px;
+  width: 250px;
+  font-weight: 400;
 }
 
 .post-comment-submit-button {

@@ -43,7 +43,7 @@ class Post extends React.Component {
         </div>
       );
     } else {
-      <div className="trash-icon">
+      <div className="post-trash-icon">
       </div>
       };
   }

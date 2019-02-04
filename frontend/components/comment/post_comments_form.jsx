@@ -95,7 +95,7 @@ class PostCommentsForm extends React.Component {
                   <Link className="post-comment-author"
                     to={`/users/${comments[comment_id].author_id}`}
                     onClick={() => this.props.closeModal()}>
-                    <p>{users[comments[comment_id].author_id].username}</p>
+                    <h2>{users[comments[comment_id].author_id].username}</h2>
                   </Link>
                 </div>
                 <div className="post-comment-text">
@@ -114,7 +114,7 @@ class PostCommentsForm extends React.Component {
               <div className="post-comment-username">
                 <Link className="post-comment-author"
                   to={`/users/${comments[comment_id].author_id}`}>
-                  <p>{users[comments[comment_id].author_id].username}</p>
+                  <h2>{users[comments[comment_id].author_id].username}</h2>
                 </Link>
               </div>
               <div className="post-comment-text">
