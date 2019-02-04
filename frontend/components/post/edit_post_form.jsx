@@ -29,11 +29,8 @@ class EditPostForm extends React.Component {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
       <div className="upload-container">
-        <div className="upload-title">
+        <div className="edit-post-title">
           <h3>Edit Post</h3>
-          <label htmlFor="upload-file-upload" className="upload-post-file">
-            <i className="far fa-plus-square"></i>
-          </label>
         </div>
         <div className="upload-preview">
           {preview}
