@@ -11,7 +11,6 @@ class Api::PostsController < ApplicationController
   end
 
   def index
-
     if params[:user_id]
       @user = User.find(params[:user_id])
       @posts = @user.posts
@@ -19,8 +18,7 @@ class Api::PostsController < ApplicationController
     else
       @posts = Post.all.includes(:author).limit(10).order(id: :desc)
       render "api/posts/index"
-    end
-    
+    end  
   end
 
   def show
