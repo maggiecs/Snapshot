@@ -1,4 +1,4 @@
-class FollowsController < ApplicationController
+class Api::FollowsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
@@ -11,7 +11,9 @@ class FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
-    @follow.follower_id = current_user.id
+    # @follow = Follow.new
+    # @follow.follower_id = current_user.id
+    # @follow.followee_id = params[:user_id]
     if @follow.save
       render "api/follows/show"
     else
@@ -22,12 +24,12 @@ class FollowsController < ApplicationController
   def destroy
     @follow = Follow.where(followee_id: params[:user_id]).where(follower_id: current_user.id)[0]
     @follow.destroy
-    render :show
+    render "api/follows/show"
   end
 
   private
-  def follows_params
-    params.permit(:follow).permit(:followee_id, :follower_id)
+  def follow_params
+    params.require(:follow).permit(:followee_id, :follower_id)
   end
 
 end

@@ -6,7 +6,7 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      
     };
   }
 
@@ -20,6 +20,17 @@ class UserProfile extends React.Component {
       this.props.fetchUser(this.props.match.params.id);
       this.props.fetchUserPosts(this.props.match.params.id);
     }
+  }
+
+  renderFollow() {
+    let user = this.props.user;
+    let currentUser = this.props.currentUser;
+    debugger
+    if (user.id !== currentUser.id && user.follower_ids && !(user.follower_ids.includes(currentUser.id))) {
+      return <button onClick={() => this.props.createFollow({followee_id: this.props.user.id, follower_id: this.props.currentUser.id })}>Follow</button>
+    } else {
+      return <button onClick={() => this.props.deleteFollow(currentUser.id, user.id)}>Following</button>
+    } 
   }
 
   render() {
@@ -41,6 +52,7 @@ class UserProfile extends React.Component {
           <div className="main-profile-header-body">
             <div className="main-profile-header-top">
               <h2>{this.props.user.username}</h2>
+              {this.renderFollow()}
             </div>
             <div className="main-profile-header-middle">
               <p><b>{numPosts} </b>posts</p>

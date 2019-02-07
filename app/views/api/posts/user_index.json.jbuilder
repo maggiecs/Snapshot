@@ -11,7 +11,18 @@ json.posts do
 if @user
   json.users do
     json.set! @user.id do
-      json.post_ids @posts.ids 
+      json.post_ids @posts.ids
     end
   end
 end
+
+
+
+json.users do
+  json.set! current_user.id do
+    json.extract! current_user, :follower_ids, :followee_ids
+    # json.follower_ids current_user.followers.pluck(:id)
+    # json.followee_ids current_user.followees.pluck(:id)
+  end
+end
+

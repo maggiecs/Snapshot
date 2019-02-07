@@ -4,6 +4,7 @@ Rails.application.routes.draw do
      resources :users, only: [:create, :show, :update, :index] do
        resources :posts, only: [:index]
        resources :follows, only: [:index, :create, :show]
+       delete '/follows', to: 'follows#destroy'
      end
 
      resource :session, only: [:create, :destroy]
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
      end
 
      resources :comments, only: [:destroy]
-     resources :follows, only: [:destroy]
   end
 
   root "static_pages#root"

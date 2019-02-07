@@ -8,6 +8,7 @@ import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
+  let newState = merge({}, state);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -22,7 +23,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_POST_COMMENTS:
       return merge({},state, action.payload.users);
     case REMOVE_POST:
-      let newState = merge({}, state);
       let userId = action.userId;
       let postIdsArray = newState[userId].post_ids;
       let index = postIdsArray.indexOf(action.postId);
@@ -30,12 +30,15 @@ const usersReducer = (state = {}, action) => {
       newState[userId].post_ids = postIdsArray;
       return newState;
     case RECEIVE_FOLLOW:
+    debugger
       newState[action.follow.followee_id].follower_ids.push(action.follow.follower_id);
       newState[action.follow.follower_id].followee_ids.push(action.follow.followee_id);
       return merge({}, state, newState);
     case REMOVE_FOLLOW:
-      let followeeIds = newState[action.follow.follower_id].followee_ids;
-      let followerIds = newState[action.follow.followee_id].follower_ids;
+      let followeeIds = newState[action.currentUserId].followee_ids;
+      let followerIds = newState[action.userId].follower_ids;
+      newState[action.currentUserId].followee_ids = followeeIds.filter(id => id !== userId);
+      newState[action.userId].follower_ids = followerIds.filter(id => id !== currentUserId);
       return newState;
     case LOGOUT_CURRENT_USER:
       return {};

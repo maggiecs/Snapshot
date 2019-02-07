@@ -38,16 +38,28 @@ class User < ApplicationRecord
     class_name: 'Like',
     dependent: :destroy
 
-  has_many :followers,
+  has_many :follower_follows,
     primary_key: :id,
     foreign_key: :follower_id,
     class_name: 'Follow',
     dependent: :destroy
 
-  has_many :followees,
+  has_many :followee_follows,
     primary_key: :id,
-    foreign_key: :followee_id,
+    foreign_key: :follower_id,
     class_name: 'Follow',
+    dependent: :destroy
+
+  has_many :followers,
+    primary_key: :id,
+    through: :followee_follows,
+    source: :follower,
+    dependent: :destroy
+  
+    has_many :followees,
+    primary_key: :id,
+    through: :follower_follows,
+    source: :followee,
     dependent: :destroy
 
   def self.find_by_credentials(username, password)

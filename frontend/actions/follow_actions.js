@@ -10,9 +10,9 @@ export const createFollow = (follow) => {
   };
 };
 
-export const deleteFollow = (follow_id) => {
+export const deleteFollow = (currentUserId, userId) => {
   return dispatch => {
-    return FollowAPIUtil.deleteFollow(follow_id).then(() => dispatch(removeFollow(follow_id)));
+    return FollowAPIUtil.deleteFollow(userId).then(() => dispatch(removeFollow(currentUserId, userId)));
   };
 };
 
@@ -21,7 +21,8 @@ const receiveFollow = (follow) => ({
   follow: follow
 });
 
-const removeFollow = (follow_id) => ({
+const removeFollow = (currentUserId, userId) => ({
   type: REMOVE_FOLLOW,
-  follow_id
+  currentUserId,
+  userId
 });
