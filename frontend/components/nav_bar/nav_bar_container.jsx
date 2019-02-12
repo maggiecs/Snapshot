@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSearchedUsers } from '../../actions/user_actions';
+import { fetchSearchedUsers, receiveNullUsers } from '../../actions/user_actions';
 import NavBar from './nav_bar';
 
 const msp = (state) => {
@@ -11,7 +11,8 @@ const msp = (state) => {
 
 const mdp = dispatch => {
   return {
-    fetchSearchedUsers: (query) => dispatch(fetchSearchedUsers(query))
+    fetchSearchedUsers: (query) => dispatch(fetchSearchedUsers(query)),
+    receiveNullUsers: () => dispatch(receiveNullUsers())
   };
 };
 

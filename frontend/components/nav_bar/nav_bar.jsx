@@ -12,7 +12,12 @@ class NavBar extends React.Component {
     return e => {
       this.setState({
       [field]: e.currentTarget.value });
-      this.props.fetchSearchedUsers(e.currentTarget.value);
+
+      if (e.currentTarget.value !== "") {
+        this.props.fetchSearchedUsers(e.currentTarget.value);
+      } else {
+        this.props.receiveNullUsers();
+      }
     };
   }
 

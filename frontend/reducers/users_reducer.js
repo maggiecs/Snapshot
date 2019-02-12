@@ -30,15 +30,14 @@ const usersReducer = (state = {}, action) => {
       newState[userId].post_ids = postIdsArray;
       return newState;
     case RECEIVE_FOLLOW:
-    debugger
       newState[action.follow.followee_id].follower_ids.push(action.follow.follower_id);
       newState[action.follow.follower_id].followee_ids.push(action.follow.followee_id);
       return merge({}, state, newState);
     case REMOVE_FOLLOW:
       let followeeIds = newState[action.currentUserId].followee_ids;
       let followerIds = newState[action.userId].follower_ids;
-      newState[action.currentUserId].followee_ids = followeeIds.filter(id => id !== userId);
-      newState[action.userId].follower_ids = followerIds.filter(id => id !== currentUserId);
+      newState[action.currentUserId].followee_ids = followeeIds.filter(id => id !== action.userId);
+      newState[action.userId].follower_ids = followerIds.filter(id => id !== action.currentUserId);
       return newState;
     case LOGOUT_CURRENT_USER:
       return {};

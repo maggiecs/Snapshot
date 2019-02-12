@@ -13,6 +13,9 @@ class UserProfile extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id);
     this.props.fetchUserPosts(this.props.match.params.id);
+    // if (this.props.user.id === this.props.currentUser.id) {
+    //   return this.props.history.push('/profile');
+    // }
   }
 
   componentDidUpdate(oldProps) {
@@ -25,7 +28,6 @@ class UserProfile extends React.Component {
   renderFollow() {
     let user = this.props.user;
     let currentUser = this.props.currentUser;
-    debugger
     if (user.id !== currentUser.id && user.follower_ids && !(user.follower_ids.includes(currentUser.id))) {
       return <button onClick={() => this.props.createFollow({followee_id: this.props.user.id, follower_id: this.props.currentUser.id })}>Follow</button>
     } else {
