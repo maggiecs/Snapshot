@@ -21,8 +21,7 @@ end
 json.users do
   json.set! current_user.id do
     json.extract! current_user, :follower_ids, :followee_ids
-    # json.follower_ids current_user.followers.pluck(:id)
-    # json.followee_ids current_user.followees.pluck(:id)
+    json.post_ids @posts.ids
   end
 end
 

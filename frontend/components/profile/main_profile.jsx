@@ -14,17 +14,60 @@ class MainProfile extends React.Component {
     this.props.fetchUserPosts(this.props.currentUser.id);
   }
 
+  renderNumPosts(numPosts) {
+    if (numPosts === 1) {
+      return (
+        <p><b>{numPosts} </b>post</p>
+      );
+    } else {
+      return (
+        <p><b>{numPosts} </b>posts</p>
+      );
+    }
+  }
+
+  renderNumFollowers(numFollowers) {
+    if (numFollowers === 1) {
+      return (
+        <p><b>{numFollowers} </b>follower</p>
+      );
+    } else {
+      return (
+        <p><b>{numFollowers} </b>followers</p>
+      );
+    }
+  }
+
+  renderNumFollowings(numFollowees) {
+    if (numFollowees === 1) {
+      return (
+        <p><b>{numFollowees} </b>following</p>
+      );
+    } else {
+      return (
+        <p><b>{numFollowees} </b>followings</p>
+      );
+    }
+  }
+
+
   render() {
     let userPosts;
     let numPosts;
+    let numFollowers;
+    let numFollowees;
+
     if (this.props.currentUser.post_ids) {
       numPosts = this.props.currentUser.post_ids.length;
+      numFollowers = this.props.currentUser.follower_ids.length;
+      numFollowees = this.props.currentUser.followee_ids.length;
       userPosts = this.props.currentUser.post_ids.map(post_id => {
         return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)}/>;
       }).reverse();
+    } else {
+      numPosts = 0;
     }
-    
-    
+
     return (
       <div className= "main-profile-container">
         <div className="main-profile-header">
@@ -38,9 +81,9 @@ class MainProfile extends React.Component {
               <button className="logout-button" onClick={this.props.logout}>Log Out</button>
             </div>
             <div className="main-profile-header-middle">
-              <p><b>{numPosts} </b>posts</p>
-              <p><b>100 </b>followers</p>
-              <p><b>100 </b>following</p>
+              {this.renderNumPosts(numPosts)}
+              {this.renderNumFollowers(numFollowers)}
+              {this.renderNumFollowings(numFollowees)}
             </div>
             <div className="main-profile-header-bottom">
               <p><b>{this.props.currentUser.full_name}</b></p>
