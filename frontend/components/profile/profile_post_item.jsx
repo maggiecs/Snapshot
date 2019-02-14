@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProfilePostItem = ({ posts, post_id, openModal} ) => {
+const ProfilePostItem = ({ posts, post_id, openPostModal} ) => {
     let post = posts[post_id] || {};
     return (
-      <li key={post_id} posts={posts} onClick={openModal}>
+      <li key={post_id} posts={posts} onClick={openPostModal}>
           <img src={post.photoUrl} />
       </li>
     );

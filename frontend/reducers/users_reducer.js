@@ -4,7 +4,7 @@ import { RECEIVE_USER_POSTS, RECEIVE_ALL_POSTS  } from '../actions/post_actions'
 import { RECEIVE_POST_COMMENTS} from '../actions/comment_actions';
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 import { REMOVE_POST } from '../actions/post_actions';
-import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW, RECEIVE_FOLLOWS } from '../actions/follow_actions';
 import merge from 'lodash/merge';
 
 const usersReducer = (state = {}, action) => {
@@ -39,6 +39,8 @@ const usersReducer = (state = {}, action) => {
       newState[action.currentUserId].followee_ids = followeeIds.filter(id => id !== action.userId);
       newState[action.userId].follower_ids = followerIds.filter(id => id !== action.currentUserId);
       return newState;
+    case RECEIVE_FOLLOWS:
+      return merge({}, state, action.payload.users);
     case LOGOUT_CURRENT_USER:
       return {};
     default:

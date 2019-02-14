@@ -20,7 +20,9 @@ const mdp = dispatch => {
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
-    openModal: (postId) => dispatch(openModal("post", postId)),
+    openPostModal: (postId) => dispatch(openModal("post", postId)),
+    openFollowerModal: () => dispatch(openModal("follower")),
+    openFollowingModal: () => dispatch(openModal("following")),
     createFollow: (follow) => dispatch(createFollow(follow)),
     deleteFollow: (currentUserId, userId) => dispatch(deleteFollow(currentUserId, userId))
   };

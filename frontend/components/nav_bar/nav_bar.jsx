@@ -52,7 +52,6 @@ class NavBar extends React.Component {
             <div className="nav-logo">
               <Link to="/"><i className="fab fa-instagram"></i></Link>
               <Link to="/"><p className="logo-name">Snapshot</p></Link>
-              {/* <img src={window.header_logoURL} /></Link> */}
             </div>
           </li>
           <li className="nav-search-container">

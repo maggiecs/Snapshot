@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_POST_COMMENTS: // DO I NEED THIS??????
+    case RECEIVE_POST_COMMENTS:
       return merge({}, state, action.payload.comments);
     case RECEIVE_COMMENT:
       return merge({}, state, { [action.comment.id]: action.comment });

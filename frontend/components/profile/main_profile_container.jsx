@@ -17,7 +17,7 @@ const mdp = dispatch => {
   return {
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
     logout: () => dispatch(logout()),
-    openModal: (postId) => dispatch(openModal("post", postId))
+    openPostModal: (postId) => dispatch(openModal("post", postId))
   };
 };
 

@@ -12,7 +12,7 @@ const msp = ({ session, entities: { users, comments } }) => {
 
 const mdp = dispatch => {
   return {
-    fetchUserComments: (postId) => dispatch(fetchComments(postId)),
+    // fetchUserComments: (postId) => dispatch(fetchComments(postId)),
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (id, postId) => dispatch(deleteComment(id, postId))
   };

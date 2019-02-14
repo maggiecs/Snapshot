@@ -62,7 +62,7 @@ class MainProfile extends React.Component {
       numFollowers = this.props.currentUser.follower_ids.length;
       numFollowees = this.props.currentUser.followee_ids.length;
       userPosts = this.props.currentUser.post_ids.map(post_id => {
-        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)}/>;
+        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openPostModal={() => this.props.openPostModal(post_id)}/>;
       }).reverse();
     } else {
       numPosts = 0;

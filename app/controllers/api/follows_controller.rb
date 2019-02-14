@@ -11,9 +11,6 @@ class Api::FollowsController < ApplicationController
 
   def create
     @follow = Follow.new(follow_params)
-    # @follow = Follow.new
-    # @follow.follower_id = current_user.id
-    # @follow.followee_id = params[:user_id]
     if @follow.save
       render "api/follows/show"
     else

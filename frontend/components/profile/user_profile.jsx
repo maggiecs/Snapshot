@@ -58,11 +58,11 @@ class UserProfile extends React.Component {
   renderNumFollowers(numFollowers) {
     if (numFollowers === 1) {
       return (
-        <p><b>{numFollowers} </b>follower</p>
+        <p onClick={this.props.openFollowerModal}><b>{numFollowers} </b>follower</p>
       );
     } else {
       return (
-        <p><b>{numFollowers} </b>followers</p>
+        <p onClick={this.props.openFollowerModal}><b>{numFollowers} </b>followers</p>
       );
     }
   }
@@ -70,11 +70,11 @@ class UserProfile extends React.Component {
   renderNumFollowings(numFollowees) {
     if (numFollowees === 1) {
       return (
-        <p><b>{numFollowees} </b>following</p>
+        <p onClick={this.props.openFollowingModal}><b>{numFollowees} </b>following</p>
       );
     } else {
       return (
-        <p><b>{numFollowees} </b>followings</p>
+        <p onClick={this.props.openFollowingModal}><b>{numFollowees} </b>followings</p>
       );
     }
   }
@@ -84,13 +84,14 @@ class UserProfile extends React.Component {
     let numPosts;
     let numFollowers;
     let numFollowees;
+    let user = this.props.user;
 
-    if (this.props.user && this.props.user.post_ids) {
+    if (user && user.post_ids && user.followee_ids && user.follower_ids) {
       numPosts = this.props.user.post_ids.length;
-      numFollowers = this.props.currentUser.follower_ids.length;
-      numFollowees = this.props.currentUser.followee_ids.length;
+      numFollowers = this.props.user.follower_ids.length;
+      numFollowees = this.props.user.followee_ids.length;
       userPosts = this.props.user.post_ids.map(post_id => {
-        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openModal={() => this.props.openModal(post_id)} />;
+        return <ProfilePostItem key={post_id} post_id={post_id} posts={this.props.posts} openPostModal={() => this.props.openPostModal(post_id)} />;
       }).reverse();
     } else {
       numPosts = 0;
