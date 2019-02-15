@@ -12,7 +12,13 @@ const msp = (state, ownProps) => {
 
   const { session, entities: { users } } = state;
   const currentUser = users[session.id];
-  const user = users[match.params.id] || {};
+  let user;
+  
+  if (match) {
+    user = users[match.params.id] || {};
+  } else {
+    user = currentUser;
+  }
 
 
   return {

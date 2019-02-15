@@ -5,17 +5,23 @@ import ProfilePostItem from './profile_post_item';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      
-    };
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.id);
-    this.props.fetchUserPosts(this.props.match.params.id);
-    // if (this.props.user.id === this.props.currentUser.id) {
-    //   return this.props.history.push('/profile');
-    // }
+    let user = this.props.user;
+    let currentUser = this.props.currentUser;
+
+    if (user.id !== currentUser.id) {
+      this.props.fetchUser(this.props.match.params.id);
+      this.props.fetchUserPosts(this.props.match.params.id);
+    } else {
+      this.props.fetchUserPosts(this.props.currentUser.id);
+    }
+   
+      // if (this.props.user.id === this.props.currentUser.id) {
+      //   return this.props.history.push('/profile');
+      // }
+    
   }
 
   componentDidUpdate(oldProps) {

@@ -4,6 +4,7 @@ import { fetchUserPosts } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
+import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => {
   const { session, entities: { users, posts } } = state;
@@ -13,7 +14,6 @@ const msp = (state, ownProps) => {
     posts: posts,
     currentUser: users[session.id]
   };
-
 };
 
 const mdp = dispatch => {
@@ -24,7 +24,8 @@ const mdp = dispatch => {
     openFollowerModal: () => dispatch(openModal("follower")),
     openFollowingModal: () => dispatch(openModal("following")),
     createFollow: (follow) => dispatch(createFollow(follow)),
-    deleteFollow: (currentUserId, userId) => dispatch(deleteFollow(currentUserId, userId))
+    deleteFollow: (currentUserId, userId) => dispatch(deleteFollow(currentUserId, userId)),
+    logout: () => dispatch(logout())
   };
 };
 
