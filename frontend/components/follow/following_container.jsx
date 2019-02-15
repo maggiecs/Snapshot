@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Following from './following.jsx';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter, matchPath } from 'react-router-dom';
+import { fetchFolloweeFollows, createFollow, deleteFollow  } from '../../actions/follow_actions';
 
 const msp = (state, ownProps) => {
   
@@ -23,7 +24,11 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    openModal: () => dispatch(openModal('following'))
+    openModal: () => dispatch(openModal('following')),
+    closeModal: () => dispatch(closeModal()),
+    fetchFolloweeFollows: (userId, followees) => dispatch(fetchFolloweeFollows(userId, followees)),
+    createFollow: (follow) => dispatch(createFollow(follow)),
+    deleteFollow: (currentUserId, userId) => dispatch(deleteFollow(currentUserId, userId))
   };
 };
 

@@ -42,5 +42,5 @@ const removeFollow = (currentUserId, userId) => ({
 
 const receiveFollows = (follows) => ({
   type: RECEIVE_FOLLOWS,
-  follows: follows
+  follows
 });

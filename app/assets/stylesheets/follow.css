@@ -1,0 +1,44 @@
+.follow-container {
+  font-family: 'Roboto', sans-serif;
+}
+.follow-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 43px;
+  background-color: #ffffff;
+  border-radius: 10px 10px 0px 0px;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.follow-list-items {
+  width: 400px;
+  height: 357px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 10px 10px ;
+}
+
+.follow-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.follow-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.follow-item-username {
+  width: 241px;
+  height: 18px;
+  margin-left: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}

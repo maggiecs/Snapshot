@@ -31,9 +31,9 @@
         json.extract! comment.author, :id, :username
         if comment.author.photo.attached?
           json.photoUrl url_for(comment.author.photo)
-         else
+        else
           json.photoUrl default_url
-          end
+        end
       end
     end
   end

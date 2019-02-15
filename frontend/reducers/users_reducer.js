@@ -40,7 +40,9 @@ const usersReducer = (state = {}, action) => {
       newState[action.userId].follower_ids = followerIds.filter(id => id !== action.currentUserId);
       return newState;
     case RECEIVE_FOLLOWS:
-      return merge({}, state, action.payload.users);
+      return merge({}, state, action.follows.users);
+    // case RECEIVE_USER_POSTS:
+    //   return merge({}, state, action.payload.users);
     case LOGOUT_CURRENT_USER:
       return {};
     default:
