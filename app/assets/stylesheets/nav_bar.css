@@ -2,7 +2,11 @@
   background: #fff;
   color: #000;
   border-bottom: 1px solid #f0f0f0;
-  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
 }
 
 .header-nav {
@@ -43,7 +47,6 @@
 }
 
 .nav-logo {
-  display: block;
   padding: 20px 10px;
   display: flex;
   align-items: center;
@@ -69,11 +72,18 @@
 .fa-instagram {
   padding-right: 10px;
   margin-right: 10px;
-  border-right: solid 1px black;
+  padding-top: 4px;
 }
 
 .logo-name {
   font-size: 35px;
+  
+}
+
+.logo-separator {
+  border-left: solid 1px black;
+  height: 28px;
+  margin-right: 14px;
 }
 
 .div {
@@ -126,4 +136,12 @@
   font-size: 14px;
   font-weight: 400;
   color: #999;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { displayTimestamp} from '../../util/date_util';
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -75,6 +76,9 @@ class CommentForm extends React.Component {
         <form className="comment-form" onSubmit={this.handleSubmit.bind(this)}>
           <div className="comment-body">
             {postComments}
+            <div className="post-createdAt-time">
+              {displayTimestamp(post.created_at).toUpperCase()}
+            </div>
             <div className="comment-add-comment-box">
               <div className="comment-add-comment">
                 <input id={`post-${post.id}-input`} type="text"

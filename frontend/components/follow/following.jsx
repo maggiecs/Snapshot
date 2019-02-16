@@ -18,7 +18,7 @@ class Following extends React.Component {
     if (user.followee_ids) {
       userFollowings = this.props.user.followee_ids.map(followee_id => {
         let userFollowee = users[followee_id];
-        if (userFollowee) {
+        if (userFollowee && userFollowee.follower_ids) {
           if (!userFollowee.follower_ids.includes(currentUser.id)) {
             return (
               <div key={followee_id} className="follow-item">

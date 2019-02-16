@@ -17,10 +17,7 @@ class UserProfile extends React.Component {
     } else {
       this.props.fetchUserPosts(this.props.currentUser.id);
     }
-   
-      // if (this.props.user.id === this.props.currentUser.id) {
-      //   return this.props.history.push('/profile');
-      // }
+
     
   }
 
@@ -31,6 +28,7 @@ class UserProfile extends React.Component {
     }
   }
 
+  
   renderFollow() {
     let user = this.props.user;
     let currentUser = this.props.currentUser;
@@ -72,6 +70,8 @@ class UserProfile extends React.Component {
       );
     }
   }
+
+ 
 
   renderNumFollowings(numFollowees) {
     if (numFollowees === 1) {
@@ -144,5 +144,7 @@ class UserProfile extends React.Component {
     );
   }
 }
+
+
 
 export default UserProfile;

@@ -51,6 +51,7 @@ class NavBar extends React.Component {
           <li>
             <div className="nav-logo">
               <Link to="/"><i className="fab fa-instagram"></i></Link>
+              <div className="logo-separator"> </div>
               <Link to="/"><p className="logo-name">Snapshot</p></Link>
             </div>
           </li>

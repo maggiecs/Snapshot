@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { displayTimestamp } from '../../util/date_util';
 
 class PostCommentsForm extends React.Component {
   constructor(props) {
@@ -113,7 +114,8 @@ class PostCommentsForm extends React.Component {
             <div key={comment_id} className="post-comment-list-item">
               <div className="post-comment-username">
                 <Link className="post-comment-author"
-                  to={`/users/${comments[comment_id].author_id}`}>
+                  to={`/users/${comments[comment_id].author_id}`}
+                  onClick={() => this.props.closeModal()}>
                   <h2>{users[comments[comment_id].author_id].username}</h2>
                 </Link>
               </div>
@@ -157,6 +159,9 @@ class PostCommentsForm extends React.Component {
               </div>
               <div className="post-comment-likes">
                 {renderLikes}
+              </div>
+              <div className="post-createdAt-time">
+                {displayTimestamp(post.created_at).toUpperCase()}
               </div>
               <div className="post-comment-add-comment-box">
                 <div className="post-comment-add-comment">

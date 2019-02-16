@@ -18,7 +18,7 @@ class Follower extends React.Component {
     if (user.follower_ids) {
       userFollowers = user.follower_ids.map(follower_id => {
         let userFollower = users[follower_id];
-        if (userFollower) {
+        if (userFollower && userFollower.follower_ids ) {
           if (!userFollower.follower_ids.includes(currentUser.id)) {
             return (
               <li key={follower_id} className="follow-item">
