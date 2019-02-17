@@ -19,7 +19,7 @@ end
 json.users do
   json.set! current_user.id do
     json.extract! current_user, :follower_ids, :followee_ids
-    json.post_ids @posts.ids
+    json.post_ids current_user.posts.ids
   end
 end
 

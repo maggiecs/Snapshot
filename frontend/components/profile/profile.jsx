@@ -16,9 +16,7 @@ class UserProfile extends React.Component {
       this.props.fetchUserPosts(this.props.match.params.id);
     } else {
       this.props.fetchUserPosts(this.props.currentUser.id);
-    }
-
-    
+    } 
   }
 
   componentDidUpdate(oldProps) {
