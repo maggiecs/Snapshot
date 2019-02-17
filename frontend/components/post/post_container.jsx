@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import Post from './post';
 import { fetchPost, deletePost, updatePost } from '../../actions/post_actions';
 // import { fetchComments } from '../../actions/comment_actions';
+import { createPostLike, deletePostLike } from '../../actions/like_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
@@ -31,7 +31,8 @@ const mdp = dispatch => {
     fetchPost: (id) => dispatch(fetchPost(id)),
     deletePost: (id, userId) => dispatch(deletePost(id, userId)),
     updatePost: (id) => dispatch(updatePost(id)),
-    // fetchComments: (postId) => dispatch(fetchComments(postId)),
+    createPostLike: (like) => dispatch(createPostLike(like)),
+    deletePostLike: (userId, postId) => dispatch(deletePostLike(userId, postId)),
     closeModal: () => dispatch(closeModal())
   };
 };

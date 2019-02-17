@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentContainer from '../comment/comment_container';
+import NewCommentContainer from '../comment/new_comment_container';
 
 class PostIndexItem extends React.Component {
   constructor(props) {
@@ -99,6 +100,7 @@ class PostIndexItem extends React.Component {
           </div>
           <div className="post-index-image-comments">
             <CommentContainer post={post} />
+            <NewCommentContainer post={post} />
           </div>
         </div>
       </div>

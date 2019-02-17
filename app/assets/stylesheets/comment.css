@@ -66,8 +66,9 @@
   resize: none;
   padding-top: 5px;
   height: 30px;
-  width: 510px;
+  width: 100%;
   font-weight: 400;
+  font-size: 14px;
 }
 
 .comment-submit-button {
