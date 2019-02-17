@@ -128,23 +128,21 @@ class PostCommentsForm extends React.Component {
       });
     }
 
-    let height = 0;
-    $('#post-comment-body-top div').each(function (i, value) {
-      height += parseInt($(this).height());
-    });
-    height += '';
-    $('#post-comment-body-top').animate({ scrollTop: height });
-
     let renderLikes;
     if (post.liker_ids) {
       renderLikes = this.renderLikes(post.liker_ids.length);
+    }
+
+    let commentBox = document.getElementsByClassName('.post-comment-body-top')[0];
+    if (commentBox) {
+      commentBox.scrollTop = commentBox.scrollHeight;
     }
 
     return (
       <div className="post-comment-container">
         <form className="post-comment-form" onSubmit={this.handleSubmit.bind(this)}>
           <div className="post-comment-body">
-            <div id="post-comment-body-top">
+            <div className="post-comment-body-top">
               {postComments}
             </div>
             <div className="post_comment-body-bottom">

@@ -4,11 +4,10 @@ export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_USER_POSTS = "RECEIVE_USER_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
-export const RECEIVE_FEED_IDS = "RECEIVE_FEED_IDS";//will need to get ids of only
-//people the current user follows //probably need to create an action to only get
-//posts from people the current user follows
+export const RECEIVE_FEED_POSTS = "RECEIVE_FEED_POSTS";
 export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 export const REMOVE_POST_ERRORS = "REMOVE_POST_ERRORS";
+export const CLEAR_PREV_POSTS = "CLEAR_PREV_POSTS";
 
 export const fetchPosts = () => {
   return dispatch => {
@@ -88,15 +87,21 @@ const removePost = (postId, userId) => {
   };
 };
 
+export const clearPrevPosts = () => {
+  return {
+    type: CLEAR_PREV_POSTS
+  };
+};
+
 export const removePostErrors = () => {
   return {
     type: RECEIVE_POST_ERRORS,
   };
 };
 
-const receiveFeedIds = (posts) => {
+const receiveFeedPosts = (posts) => {
   return {
-    type: RECEIVE_FEED_IDS,
+    type: RECEIVE_FEED_POSTS,
     posts
   };
 };

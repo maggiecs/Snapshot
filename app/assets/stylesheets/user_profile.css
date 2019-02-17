@@ -89,4 +89,17 @@
   height: 293px;
   width: 293px;
 }
+
+.profile-follow {
+  cursor: pointer;
+}
+
+.profile-follow:active {
+  color: #999999;
+}
+
+.button:active {
+  color: #999999;
+}
+  
   

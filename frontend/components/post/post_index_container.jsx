@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PostIndexForm from './post_index_form';
 import { removeErrors } from '../../actions/session_actions';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchPosts, clearPrevPosts } from '../../actions/post_actions';
 import { createPostLike, deletePostLike } from '../../actions/like_actions';
 
 const msp = (state) => {
@@ -17,6 +17,7 @@ const msp = (state) => {
 const mdp = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
+    clearPrevPosts: () => dispatch(clearPrevPosts()),
     createPostLike: (like) => dispatch(createPostLike(like)),
     deletePostLike: (userId, postId) => dispatch(deletePostLike(userId, postId))
   };

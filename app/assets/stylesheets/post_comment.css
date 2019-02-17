@@ -13,8 +13,8 @@
   height: 490px;
 }
 
-#post-comment-body-top {
-  overflow: auto;
+.post-comment-body-top {
+  overflow: scroll;
   height: 490px;
 }
 

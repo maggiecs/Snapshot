@@ -35,8 +35,8 @@ class UserProfile extends React.Component {
     if (user.id === currentUser.id) {
       return (
         <div>
-          <button><Link to="/accounts/edit">Edit Profile</Link></button>
-          <button className="logout-button" onClick={this.props.logout}>Log Out</button>
+          <button className="button"><Link to="/accounts/edit">Edit Profile</Link></button>
+          <button className="button" onClick={this.props.logout}>Log Out</button>
         </div>
       );
     }
@@ -62,11 +62,11 @@ class UserProfile extends React.Component {
   renderNumFollowers(numFollowers) {
     if (numFollowers === 1) {
       return (
-        <p onClick={this.props.openFollowerModal}><b>{numFollowers} </b>follower</p>
+        <p className="profile-follow" onClick={this.props.openFollowerModal}><b>{numFollowers} </b>follower</p>
       );
     } else {
       return (
-        <p onClick={this.props.openFollowerModal}><b>{numFollowers} </b>followers</p>
+        <p className="profile-follow" onClick={this.props.openFollowerModal}><b>{numFollowers} </b>followers</p>
       );
     }
   }
@@ -76,11 +76,11 @@ class UserProfile extends React.Component {
   renderNumFollowings(numFollowees) {
     if (numFollowees === 1) {
       return (
-        <p onClick={this.props.openFollowingModal}><b>{numFollowees} </b>following</p>
+        <p className="profile-follow" onClick={this.props.openFollowingModal}><b>{numFollowees} </b>following</p>
       );
     } else {
       return (
-        <p onClick={this.props.openFollowingModal}><b>{numFollowees} </b>followings</p>
+        <p className="profile-follow" onClick={this.props.openFollowingModal}><b>{numFollowees} </b>followings</p>
       );
     }
   }
