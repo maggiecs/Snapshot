@@ -65,10 +65,10 @@ const receiveUserPosts = (payload, userId) => {
   };
 };
 
-export const receivePost = (post) => {
+export const receivePost = (payload) => {
   return {
     type: RECEIVE_POST,
-    post
+    payload
   };
 };
 

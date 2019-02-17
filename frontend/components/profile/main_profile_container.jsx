@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Profile from './profile';
-import { fetchUserPosts } from '../../actions/post_actions';
+import { fetchUserPosts} from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
@@ -21,7 +21,7 @@ const mdp = dispatch => {
     logout: () => dispatch(logout()),
     openPostModal: (postId) => dispatch(openModal("post", postId)),
     openFollowerModal: () => dispatch(openModal("follower")),
-    openFollowingModal: () => dispatch(openModal("following")),
+    openFollowingModal: () => dispatch(openModal("following"))
   };
 };
 

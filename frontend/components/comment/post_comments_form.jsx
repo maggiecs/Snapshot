@@ -78,6 +78,17 @@ class PostCommentsForm extends React.Component {
     }
   };
 
+  renderRemoveCommentIcon(comment, currentUser, deleteComment) {
+    if (currentUser.id === comment.author_id) {
+      return (
+        <div className="xmark-icon">
+          <img src={window.xmark_iconURL}
+            onClick={() => deleteComment(comment.id, comment.post_id)} />
+        </div>
+      );
+    }
+  }
+
   render() {
     let postComments;
     const comments = this.props.comments;
@@ -86,47 +97,26 @@ class PostCommentsForm extends React.Component {
     const deleteComment = this.props.deleteComment;
     const post = this.props.post || {};
 
-    if (post && post.comment_ids) {
-      postComments = post.comment_ids.map(comment_id => {
-        if (comments[comment_id] && currentUser.id === comments[comment_id].author_id) {
-          return (
-            <div key={comment_id} className="post-comment-list-item">
-              <div className="post-comment-username-body">
-                <div className="post-comment-username">
-                  <Link className="post-comment-author"
-                    to={`/users/${comments[comment_id].author_id}`}
-                    onClick={() => this.props.closeModal()}>
-                    <h2>{users[comments[comment_id].author_id].username}</h2>
-                  </Link>
-                </div>
-                <div className="post-comment-text">
-                  <p>{comments[comment_id].body}</p>
-                </div>
-              </div>
-              <div className="xmark-icon">
-                <img src={window.xmark_iconURL}
-                  onClick={() => deleteComment(comment_id, post.id)} />
-              </div>
-            </div>
-          )
-        } else if (comments[comment_id] && comments[comment_id].author_id) {
-          return (
-            <div key={comment_id} className="post-comment-list-item">
+    postComments = comments.filter(comment => comment.post_id === post.id).map(comment => {
+        return (
+          <div key={comment.id} className="post-comment-list-item">
+            <div className="post-comment-username-body">
               <div className="post-comment-username">
                 <Link className="post-comment-author"
-                  to={`/users/${comments[comment_id].author_id}`}
+                  to={`/users/${comment.author_id}`}
                   onClick={() => this.props.closeModal()}>
-                  <h2>{users[comments[comment_id].author_id].username}</h2>
+                  <h2>{users[comment.author_id].username}</h2>
                 </Link>
               </div>
               <div className="post-comment-text">
-                <p>{comments[comment_id].body}</p>
+                <p>{comment.body}</p>
               </div>
             </div>
-          )
-        }
-      });
-    }
+            {this.renderRemoveCommentIcon(comment, currentUser, deleteComment)}
+          </div>
+        )
+    });
+  
 
     let renderLikes;
     if (post.liker_ids) {

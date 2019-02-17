@@ -6,7 +6,7 @@ const msp = ({ session, entities: { users, comments } }) => {
   return {
     currentUser: users[session.id],
     users: users,
-    comments: comments,
+    comments: Object.values(comments),
   };
 };
 

@@ -16,8 +16,6 @@ if @user
   end
 end
 
-
-
 json.users do
   json.set! current_user.id do
     json.extract! current_user, :follower_ids, :followee_ids

@@ -1,2 +1,23 @@
-json.extract! @post, :id, :body, :author_id, :comment_ids, :liker_ids
-json.photoUrl url_for(@post.photo)
+json.posts do
+  json.set! @post.id do
+    json.extract! @post, :id, :body, :author_id, :liker_ids
+    json.comment_ids @post.comments.ids 
+    json.photoUrl url_for(@post.photo)
+  end
+end
+ 
+@post.comments.each do |comment|
+  json.comments do
+    json.set! comment.id do
+      json.extract! comment, :id, :body, :author_id, :post_id
+    end 
+  end
+
+  json.users do
+    json.set! comment.author_id do
+      json.extract! comment.author, :id, :username
+    end 
+  end
+end
+
+

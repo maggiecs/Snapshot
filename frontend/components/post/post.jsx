@@ -9,7 +9,7 @@ class Post extends React.Component {
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
-    this.props.fetchComments(this.props.postId);
+    // this.props.fetchComments(this.props.postId);
   }
 
   renderEditButton() {
@@ -48,7 +48,6 @@ class Post extends React.Component {
     const comments = this.props.comments;
     const users = this.props.users;
     const post = this.props.post;
-
     return (
       <div className="post-show-container">
         <div className="post-show-container-img">
