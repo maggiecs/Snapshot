@@ -24,20 +24,22 @@ class NavBar extends React.Component {
   renderUsers() {
     if (this.state.searchedUser.length > 0) {
       return this.props.searchedUsers.map((userId) => {
-        return <Link key={userId}
-                     className="nav-search-user"
-                     onClick={() => this.setState({ searchedUser: "" })} 
-                     to={`/users/${userId}`} >
-                  <img className="nav-search-user-img" src={this.props.users[userId].photoUrl} />
-                  <div className="nav-search-user-info">
-                    <div className="nav-search-user-username">
-                      {this.props.users[userId].username}
+        if (this.props.users[userId]) {
+          return <Link key={userId}
+                      className="nav-search-user"
+                      onClick={() => this.setState({ searchedUser: "" })} 
+                      to={`/users/${userId}`} >
+                    <img className="nav-search-user-img" src={this.props.users[userId].photoUrl} />
+                    <div className="nav-search-user-info">
+                      <div className="nav-search-user-username">
+                        {this.props.users[userId].username}
+                      </div>
+                      <div className="nav-search-user-fullname">
+                        {this.props.users[userId].full_name}
+                      </div> 
                     </div>
-                    <div className="nav-search-user-fullname">
-                      {this.props.users[userId].full_name}
-                    </div> 
-                  </div>
-              </Link>;
+                </Link>;
+      }
       });
     }
   }
