@@ -104,29 +104,29 @@ class UserProfile extends React.Component {
     }
 
     return (
-      <div className="main-profile-container">
-        <div className="main-profile-header">
-          <div className="main-profile-header-photo">
+      <div className="profile-container">
+        <div className="profile-header">
+          <div className="profile-header-photo">
             <img src={this.props.user.photoUrl} />
           </div>
-          <div className="main-profile-header-body">
-            <div className="main-profile-header-top">
+          <div className="profile-header-body">
+            <div className="profile-header-top">
               <h2>{this.props.user.username}</h2>
               {this.renderFollow()}
             </div>
-            <div className="main-profile-header-middle">
+            <div className="profile-header-middle">
               {this.renderNumPosts(numPosts)}
               {this.renderNumFollowers(numFollowers)}
               {this.renderNumFollowings(numFollowees)}
             </div>
-            <div className="main-profile-header-bottom">
+            <div className="profile-header-bottom">
               <p><b>{this.props.user.full_name}</b></p>
               <p>{this.props.user.bio}</p>
               <p><b>{this.props.user.website}</b></p>
             </div>
           </div>
         </div>
-        <ul className="main-profile-photos">
+        <ul className="profile-photos">
           {userPosts}
         </ul>
         <footer className="footer">

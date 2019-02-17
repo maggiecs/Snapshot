@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import UserProfile from './user_profile';
+import Profile from './profile';
 import { fetchUserPosts } from '../../actions/post_actions';
 import { openModal } from '../../actions/modal_actions';
-import { createFollow, deleteFollow } from '../../actions/follow_actions';
-import { fetchUser } from '../../actions/user_actions';
 
 const msp = (state) => {
   const { session, entities: { users, posts } } = state;
@@ -19,7 +17,6 @@ const msp = (state) => {
 
 const mdp = dispatch => {
   return {
-    // fetchUser: (userId) => dispatch(fetchUser(userId)),ß
     fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
     logout: () => dispatch(logout()),
     openPostModal: (postId) => dispatch(openModal("post", postId)),
@@ -28,4 +25,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(UserProfile);
+export default connect(msp, mdp)(Profile);

@@ -1,4 +1,4 @@
-import { createComment, deleteComment, fetchComments } from '../../actions/comment_actions';
+import { createComment, deleteComment } from '../../actions/comment_actions';
 import { connect } from 'react-redux';
 import PostCommentsForm from './post_comments_form';
 import { createPostLike, deletePostLike } from '../../actions/like_actions';
@@ -14,7 +14,6 @@ const msp = ({ session, entities: { users, comments } }) => {
 
 const mdp = dispatch => {
   return {
-    // fetchUserComments: (postId) => dispatch(fetchComments(postId)),
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (id, postId) => dispatch(deleteComment(id, postId)),
     createPostLike: (like) => dispatch(createPostLike(like)),

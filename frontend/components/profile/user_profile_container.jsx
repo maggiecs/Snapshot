@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import UserProfile from './user_profile';
+import Profile from './profile';
 import { fetchUserPosts } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -29,4 +29,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(UserProfile);
+export default connect(msp, mdp)(Profile);

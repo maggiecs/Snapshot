@@ -121,3 +121,7 @@
   padding-top: 20px;
 }
 
+.user-submit-box:active {
+  opacity: 0.6;
+}
+

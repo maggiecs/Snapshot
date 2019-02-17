@@ -5,9 +5,6 @@ import PostCommentsContainer from '../comment/post_comments_container';
 class Post extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-     
-    };
   }
 
   componentDidMount() {
