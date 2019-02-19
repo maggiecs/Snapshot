@@ -6,7 +6,8 @@ class PostIndex extends React.Component {
     super(props);
     this.state = {
       limit: 5,
-      offset: 0
+      offset: 0,
+      prevPostsLength: 0
     };
     this.handleScroll = this.handleScroll.bind(this);
   }
@@ -48,7 +49,7 @@ class PostIndex extends React.Component {
       document.body.clientHeight, document.documentElement.clientHeight
     );
 
-    if ((window.innerHeight + window.scrollY) >= (scrollHeight) && this.props.posts.length) {
+    if (((window.innerHeight + window.scrollY) >= (scrollHeight)) && (this.props.posts.length - this.state.prevPostsLength) >= this.state.limit) {
       this.loadMore();
       this.props.fetchPosts(this.state.limit, this.state.offset);
     }
@@ -57,7 +58,8 @@ class PostIndex extends React.Component {
   loadMore() {
     this.setState({
       limit: this.state.limit,
-      offset: this.state.offset + this.state.limit
+      offset: this.state.offset + this.state.limit,
+      prevPostsLength: this.props.posts.length
     });
   }
   
