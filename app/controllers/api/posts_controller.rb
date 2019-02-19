@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
       @posts = @user.posts
       render "api/posts/user_index"
     else
-      @posts = Post.all.includes(:author).order(id: :desc)
+      @posts = Post.all.includes(:author).order(id: :desc).limit(params[:limit]).offset(params[:offset])
       render "api/posts/index"
     end  
   end

@@ -4,11 +4,17 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      limit: 5,
+      offset: 0
+    };
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     this.props.clearPrevPosts();
-    this.props.fetchPosts();
+    this.props.fetchPosts(this.state.limit, this.state.offset);
+    window.addEventListener('scroll', this.handleScroll);
 
     // window.onscroll = scrollFunction;
 
@@ -29,6 +35,30 @@ class PostIndex extends React.Component {
     //       el2.classList.remove('show');
     //     }
     //   }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll, false);
+  }
+
+  handleScroll() {
+    let scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if ((window.innerHeight + window.scrollY) >= (scrollHeight) && this.props.posts.length) {
+      this.loadMore();
+      this.props.fetchPosts(this.state.limit, this.state.offset);
+    }
+  }
+
+  loadMore() {
+    this.setState({
+      limit: this.state.limit,
+      offset: this.state.offset + this.state.limit
+    });
   }
   
   render() {

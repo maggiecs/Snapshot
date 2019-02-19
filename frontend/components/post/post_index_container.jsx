@@ -16,7 +16,7 @@ const msp = (state) => {
 
 const mdp = dispatch => {
   return {
-    fetchPosts: () => dispatch(fetchPosts()),
+    fetchPosts: (limit, offset) => dispatch(fetchPosts(limit, offset)),
     clearPrevPosts: () => dispatch(clearPrevPosts()),
     createPostLike: (like) => dispatch(createPostLike(like)),
     deletePostLike: (userId, postId) => dispatch(deletePostLike(userId, postId))

@@ -9,9 +9,9 @@ export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 export const REMOVE_POST_ERRORS = "REMOVE_POST_ERRORS";
 export const CLEAR_PREV_POSTS = "CLEAR_PREV_POSTS";
 
-export const fetchPosts = () => {
+export const fetchPosts = (limit, offset) => {
   return dispatch => {
-    return PostApiUtil.fetchPosts().then(posts => dispatch(receiveAllPosts(posts)));
+    return PostApiUtil.fetchPosts(limit, offset).then(posts => dispatch(receiveAllPosts(posts)));
   };
 };
 
