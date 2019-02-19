@@ -81,17 +81,50 @@
   min-height: 400px;
 }
 
-.profile-photos > li {
+.profile-photo-item {
   height: 293px;
   width: 293px;
   margin: 14px 14px;
-  
+  position: relative;
 }
 
-.profile-photos > li > img {
+.profile-photo-item > img {
   object-fit: cover;
   height: 293px;
   width: 293px;
+}
+
+.hover-icons {
+  display: flex;
+  font-size: 20px;
+  position: absolute;
+  background-color: #000000;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 0 10px;
+  height: 293px;
+  width: 293px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover-icons:hover {
+  opacity: 0.25;
+}
+
+.hover-icons:hover .hover-icon {
+  opacity: 1;
+}
+
+.hover-icon {
+  display: flex;
+  padding: 15px;
+  color: #ffffff;
+}
+
+.hover-icon > p {
+  padding-left: 5px;
 }
 
 .profile-follow {

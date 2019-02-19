@@ -69,7 +69,6 @@ class UserProfile extends React.Component {
     }
   }
 
- 
 
   renderNumFollowings(numFollowees) {
     if (numFollowees === 1) {

@@ -15,8 +15,12 @@ class Api::PostsController < ApplicationController
       @user = User.find(params[:user_id])
       @posts = @user.posts
       render "api/posts/user_index"
+    elsif params[:feed] == "true"
+      @user = current_user
+      followee_ids = current_user.followees.pluck(:id).push(current_user.id)
+      @posts = Post.with_attached_photo.where(author_id: followee_ids).includes(:author).order(id: :desc).limit(params[:limit]).offset(params[:offset])
     else
-      @posts = Post.all.includes(:author).order(id: :desc).limit(params[:limit]).offset(params[:offset])
+      @posts = Post.with_attached_photo.includes(:author).order(id: :desc).limit(params[:limit]).offset(params[:offset])
       render "api/posts/index"
     end  
   end

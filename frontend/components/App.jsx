@@ -13,6 +13,7 @@ import UploadContainer from './profile/upload_container';
 import MainProfileContainer from './profile/main_profile_container';
 import UserProfileContainer from './profile/user_profile_container';
 import EditPostFormContainer from './post/edit_post_container';
+import FeedIndexContainer from './post/feed_index_container';
 
 import Modal from './modal/modal';
 const App = () => (
@@ -22,7 +23,8 @@ const App = () => (
     <ProtectedRoute component={NavBarContainer} />
     <Switch>
       <ProtectedRoute exact path="/accounts/edit" component={ProfileFormContainer} />
-      <ProtectedRoute exact path="/feed" component={PostIndexContainer} />
+      <ProtectedRoute exact path="/explore" component={PostIndexContainer} />
+      <ProtectedRoute exact path="/feed" component={FeedIndexContainer} />
       <ProtectedRoute exact path="/upload" component={UploadContainer} />
       <ProtectedRoute exact path="/profile" component={MainProfileContainer} />
       <ProtectedRoute exact path="/users/:id" component={UserProfileContainer} />

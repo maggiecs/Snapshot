@@ -58,6 +58,10 @@
   color: #999999;
 }
 
+.nav-logo:active .logo-separator {
+  background-color: #999999;
+}
+
 .nav-list {
   display: flex;
 }

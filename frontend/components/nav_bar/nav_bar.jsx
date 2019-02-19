@@ -73,10 +73,9 @@ class NavBar extends React.Component {
             <ul className="nav-list">
               {/* <li><Link to="/upload"><img src={window.upload_iconURL} /></Link></li>
               <li><Link to="/profile"><img src={window.profile_iconURL} /></Link></li> */}
+              <li><Link to="/explore"><i className="far fa-compass"></i></Link></li>
               <li><Link to="/upload"><i className="fas fa-upload"></i></Link></li>
               <li><Link to="/profile"><i className="far fa-user"></i></Link></li>
-
-              
             </ul>
           </li>
         </ul>

@@ -14,7 +14,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.clearPrevPosts();
-    this.props.fetchPosts(this.state.limit, this.state.offset);
+    this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
     window.addEventListener('scroll', this.handleScroll);
 
     // window.onscroll = scrollFunction;
@@ -51,7 +51,7 @@ class PostIndex extends React.Component {
 
     if (((window.innerHeight + window.scrollY) >= (scrollHeight)) && (this.props.posts.length - this.state.prevPostsLength) >= this.state.limit) {
       this.loadMore();
-      this.props.fetchPosts(this.state.limit, this.state.offset);
+      this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
     }
   }
 
