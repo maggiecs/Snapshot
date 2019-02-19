@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:query] 
-      @users = User.where("lower(username) LIKE ?", "%#{params[:query].downcase}%")
+      @users = User.where("lower(username) LIKE ? or lower(full_name) LIKE ?", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%")
     else
       @users = User.all
     end
