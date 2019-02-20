@@ -15,7 +15,7 @@ class Explore extends React.Component {
   componentDidMount() {
     this.props.clearPrevPosts();
     this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
-    this.props.fetchUsers(this.props.currentUser.followee_ids);
+    this.props.fetchUsers({ notFollowing: true });
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -45,7 +45,15 @@ class Explore extends React.Component {
   }
 
   renderDiscoverUsers() {
-    
+    let that = this;
+    that.props.user_ids.map(user_id => {
+      return (
+        <div key="user_id" className="discover-user">
+          <p>{that.props.users[user_id].username}</p>
+          <p>{that.props.users[user_id].photoUrl}</p>
+        </div>
+      );
+    });
   }
 
   render() {
@@ -59,6 +67,7 @@ class Explore extends React.Component {
 
     return (
       <div className="explore-container">
+        {this.renderDiscoverUsers()}
         <h2 className="explore-title">Explore</h2>
         <ul className="explore-photos">
           {explorePosts}

@@ -12,9 +12,9 @@ export const fetchSearchedUsers = (query) => {
   };
 };
 
-export const fetchUsers = (followee_ids) => {
+export const fetchUsers = (notFollowing) => {
   return dispatch => {
-    return UserApiUtil.fetchUsers(followee_ids).then(users => dispatch(receiveUsers(users)));
+    return UserApiUtil.fetchUsers(notFollowing).then(users => dispatch(receiveUsers(users)));
   };
 };
 

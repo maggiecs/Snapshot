@@ -1,11 +1,12 @@
 .explore-container {
   margin-top: 79px;
-  padding: 0
+  padding: 60px;
 }
 
 .explore-title {
   font-family: Roboto, 'san-serif';
   width: 933px;
+  padding-left: 10px;
   margin: 0 auto;
   margin-bottom: 4px;
   color: #999;

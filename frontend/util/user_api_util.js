@@ -1,8 +1,8 @@
-export const fetchUsers = (followee_ids) => {
+export const fetchUsers = (notFollowing) => {
   return $.ajax({
     method: "GET",
     url: "/api/users",
-    data: { followee_ids }
+    data: { notFollowing }
   });
 };
 
