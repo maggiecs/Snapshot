@@ -2,12 +2,19 @@ import * as UserApiUtil from "../util/user_api_util";
 
 // export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_USERS = "RECEIVE_USERS";
 export const RECEIVE_SEARCHED_USERS = "RECEIVE_SEARCHED_USERS";
 export const RECEIVE_NULL_USERS = "RECEIVE_NULL_USERS";
 
 export const fetchSearchedUsers = (query) => {
   return dispatch => {
     return UserApiUtil.fetchSearchedUsers(query).then(users => dispatch(receiveSearchedUsers(users)));
+  };
+};
+
+export const fetchUsers = (followee_ids) => {
+  return dispatch => {
+    return UserApiUtil.fetchUsers(followee_ids).then(users => dispatch(receiveUsers(users)));
   };
 };
 
@@ -30,12 +37,12 @@ const receiveUser = (payload) => {
   };
 };
 
-// const receiveAllUsers = (users) => {
-//   return {
-//     type: RECEIVE_ALL_USERS,
-//     users
-//   };
-// };
+const receiveUsers = (users) => {
+  return {
+    type: RECEIVE_USERS,
+    users
+  };
+};
 
 const receiveSearchedUsers = (users) => {
   return {

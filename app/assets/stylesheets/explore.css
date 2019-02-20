@@ -1,0 +1,21 @@
+.explore-container {
+  margin-top: 79px;
+  padding: 0
+}
+
+.explore-title {
+  font-family: Roboto, 'san-serif';
+  width: 933px;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  color: #999;
+  font-weight: 500;
+}
+
+.explore-photos {
+  display: flex;
+  width: 965px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  min-height: 400px;
+}

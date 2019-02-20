@@ -79,6 +79,7 @@
   margin: 0 auto;
   flex-wrap: wrap;
   min-height: 400px;
+  
 }
 
 .profile-photo-item {
@@ -102,7 +103,6 @@
   top: 0;
   left: 0;
   opacity: 0;
-  padding: 0 10px;
   height: 293px;
   width: 293px;
   align-items: center;

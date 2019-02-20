@@ -8,7 +8,8 @@ import SplashFormContainer from './session_form/splash_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileFormContainer from './profile/edit_profile_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
-import PostIndexContainer from './post/post_index_container';
+// import PostIndexContainer from './post/post_index_container';
+import ExploreContainer from './post/explore_container';
 import UploadContainer from './profile/upload_container';
 import MainProfileContainer from './profile/main_profile_container';
 import UserProfileContainer from './profile/user_profile_container';
@@ -23,7 +24,7 @@ const App = () => (
     <ProtectedRoute component={NavBarContainer} />
     <Switch>
       <ProtectedRoute exact path="/accounts/edit" component={ProfileFormContainer} />
-      <ProtectedRoute exact path="/explore" component={PostIndexContainer} />
+      <ProtectedRoute exact path="/explore" component={ExploreContainer} />
       <ProtectedRoute exact path="/feed" component={FeedIndexContainer} />
       <ProtectedRoute exact path="/upload" component={UploadContainer} />
       <ProtectedRoute exact path="/profile" component={MainProfileContainer} />

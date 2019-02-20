@@ -1,9 +1,10 @@
-// export const fetchUsers = () => {
-//   return $.ajax({
-//     method: "GET",
-//     url: "/api/users"
-//   });
-// };
+export const fetchUsers = (followee_ids) => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/users",
+    data: { followee_ids }
+  });
+};
 
 export const fetchSearchedUsers = (query) => {
   return $.ajax({

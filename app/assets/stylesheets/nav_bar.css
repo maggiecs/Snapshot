@@ -66,6 +66,10 @@
   display: flex;
 }
 
+.fa-compass:active {
+  color: #999999;
+}
+
 .fa-upload:active {
   color: #999999;
 }
