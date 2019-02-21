@@ -14,9 +14,9 @@ class Api::UsersController < ApplicationController
     if params[:query] 
       @users = User.where("lower(username) LIKE ? or lower(full_name) LIKE ?", "%#{params[:query].downcase}%", "%#{params[:query].downcase}%")
     elsif params[:notFollowing]
-      followee_ids = current_user.followees.pluck(:id)
-      followee_ids.push(current_user.id)
-      @users = User.where.not(id: followee_ids)
+      excluded_ids = current_user.followees.pluck(:id)
+      excluded_ids.push(current_user.id)
+      @users = User.where.not(id: excluded_ids)
     else
       @users = User.all
     end

@@ -44,17 +44,15 @@ class Explore extends React.Component {
     });
   }
 
-  renderDiscoverUsers() {
-    let that = this;
-    that.props.user_ids.map(user_id => {
-      return (
-        <div key="user_id" className="discover-user">
-          <p>{that.props.users[user_id].username}</p>
-          <p>{that.props.users[user_id].photoUrl}</p>
-        </div>
-      );
-    });
+  renderFollow(user) {
+    let currentUser = this.props.currentUser;
+    if (user.id !== currentUser.id && user.follower_ids && !(user.follower_ids.includes(currentUser.id))) {
+      return <button onClick={() => this.props.createFollow({ followee_id: this.props.user.id, follower_id: this.props.currentUser.id })}>Follow</button>
+    } else {
+      return <button onClick={() => this.props.deleteFollow(currentUser.id, user.id)}>Following</button>
+    }
   }
+
 
   render() {
     let that = this;
@@ -64,10 +62,23 @@ class Explore extends React.Component {
       }
     }).reverse();
   
+    let omitted_ids = this.props.currentUser.followee_ids.concat(this.props.currentUser.id)
+   
+    let unfollowedIds = that.props.user_ids.filter(id => !omitted_ids.includes(id))
+    let discoverUsers = unfollowedIds.map(user_id => {
+      return (
+        <div key={user_id} className="discover-user">
+          <p>{that.props.users[user_id].username}</p>
+          <img src={that.props.users[user_id].photoUrl} alt="" />
+        </div>
+      );
+    });
 
     return (
       <div className="explore-container">
-        {this.renderDiscoverUsers()}
+        {/* <div className="explore-user-container">
+          {discoverUsers}
+        </div> */}
         <h2 className="explore-title">Explore</h2>
         <ul className="explore-photos">
           {explorePosts}

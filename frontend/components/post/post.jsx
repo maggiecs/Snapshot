@@ -21,14 +21,16 @@ class Post extends React.Component {
     if (this.props.user.id === this.props.currentUser.id) {
       return (
         <div className="post-show-right-edit">
-          <h2>{this.props.user.username}</h2>
+          <Link to={`/users/${this.props.user.id}`} onClick={() => this.props.closeModal()}>
+            <h2>{this.props.user.username}</h2>
+          </Link>
           <Link to={`posts/${this.props.post.id}/edit`} onClick={() => this.props.closeModal()}>Edit Post</Link>
         </div>
       );
     } else {
       return (
         <div className="post-show-right-edit">
-          <Link to={`/users/${this.props.user.id}`}>
+          <Link to={`/users/${this.props.user.id}`} onClick={() => this.props.closeModal()}>
             <h2>{this.props.user.username}</h2>
           </Link>
         </div>
@@ -130,7 +132,7 @@ class Post extends React.Component {
             <div className="post-show-comments">
               <div className="post-show-body">
                 <div className="post-show-username">
-                  <Link to={`/users/${this.props.user.id}`}>
+                  <Link to={`/users/${this.props.user.id}`} onClick={() => this.props.closeModal()}>
                     <h2>{this.props.user.username}</h2>
                   </Link>
                 </div>
@@ -144,7 +146,7 @@ class Post extends React.Component {
                     <div className="post_comment-body-bottom">
                       <div className="post-comment-icons">
                         {this.renderHeart(post)}
-                        <label htmlFor={`post-${post.id}-comments-input`}>
+                        <label htmlFor={`post-${post.id}-input`}>
                           <img
                             className="comment-icon"
                             src={window.comment_iconURL}
