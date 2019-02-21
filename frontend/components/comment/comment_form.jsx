@@ -26,23 +26,25 @@ class CommentForm extends React.Component {
     const post = this.props.post;
 
     postComments = comments.filter(comment => comment.post_id === post.id).map(comment => {
-        return (
-          <div key={comment.id} className="comment-list-item">
-            <div className="comment-username-body">
-              <div className="comment-username">
-                <Link className="comment-author"
-                  to={`/users/${comment.author_id}`}
-                  onClick={() => this.props.closeModal()}>
-                  <h2>{users[comment.author_id].username}</h2>
-                </Link>
+        if (users[comment.author_id]) {
+          return (
+            <div key={comment.id} className="comment-list-item">
+              <div className="comment-username-body">
+                <div className="comment-username">
+                  <Link className="comment-author"
+                    to={`/users/${comment.author_id}`}
+                    onClick={() => this.props.closeModal()}>
+                    <h2>{users[comment.author_id].username}</h2>
+                  </Link>
+                </div>
+                <div className="comment-text">
+                  <p>{comment.body}</p>
+                </div>
               </div>
-              <div className="comment-text">
-                <p>{comment.body}</p>
-              </div>
+              {this.renderRemoveCommentIcon(comment, currentUser, deleteComment)}
             </div>
-            {this.renderRemoveCommentIcon(comment, currentUser, deleteComment)}
-          </div>
-        )
+          )
+      }
     });
 
     return (
