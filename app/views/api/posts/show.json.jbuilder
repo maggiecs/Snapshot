@@ -2,7 +2,11 @@ json.posts do
   json.set! @post.id do
     json.extract! @post, :id, :body, :author_id, :liker_ids
     json.comment_ids @post.comments.ids 
-    json.photoUrl url_for(@post.photo)
+    if @post.photo.attached?
+        json.photoUrl url_for(@post.photo)
+    else
+        json.photoUrl default_url
+    end
   end
 end
  
