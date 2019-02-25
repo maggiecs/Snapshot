@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../footer/footer';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -100,18 +101,7 @@ class SessionForm extends React.Component {
           </div>
         </div>
 
-    
-        <footer className="footer">
-          <nav className="login-bottom-nav">
-            <ul className="login-bottom-links">
-              <li><a href="https://github.com/maggiecs">GITHUB</a></li>
-              <li><a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a></li>
-            </ul>
-          </nav>
-          <small className="footer-copy">
-            &copy; 2019 SNAPSHOT
-          </small>
-        </footer>
+        <Footer />
       </div>
       
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProfilePostItem from './profile_post_item';
+import Footer from '../footer/footer';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -126,17 +127,7 @@ class UserProfile extends React.Component {
         <ul className="profile-photos">
           {userPosts}
         </ul>
-        <footer className="footer">
-          <nav className="login-bottom-nav">
-            <ul className="login-bottom-links">
-              <li><a href="https://github.com/maggiecs">GITHUB</a></li>
-              <li><a href="https://www.linkedin.com/in/maggie-chen1">LINKEDIN</a></li>
-            </ul>
-          </nav>
-          <small className="footer-copy">
-            &copy; 2019 SNAPSHOT
-        </small>
-        </footer>
+        <Footer />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import Footer from '../footer/footer';
 
 class PostIndex extends React.Component {
   constructor(props) {
@@ -86,11 +87,13 @@ class PostIndex extends React.Component {
     }).reverse();
     
     return (
+
       <div className="post-index-container">
         <div className="post-index-images">
         {indexPosts}
         </div>
-      </div>  
+      </div> 
+      // <Footer />
     );
   }
 

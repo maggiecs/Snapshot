@@ -116,34 +116,6 @@
   color: #3897f0;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin: 20px auto;
-  font-size: 13px;
-  margin: 40px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  align-items: center;
-  vertical-align: bottom;
-}
-
-
-.footer-copy {
-  display: block;
-  color: #aaa;  
-}
-
-.login-bottom-links {
-  display: flex;
-  width: 200px;
-  justify-content: space-between;
-  margin: 0px auto;
-  color: #003569;
-  
-}
-
 input[type="submit"]:disabled {
   opacity: 0.6;
 }
