@@ -3,7 +3,11 @@ json.posts do
   @posts.each do |post|
     json.set! post.id do
       json.extract! post, :id, :body, :author_id, :created_at, :liker_ids, :comment_ids
-      json.photoUrl url_for(post.photo)
+      if post.photo.attached?
+        json.photoUrl url_for(post.photo)
+      else
+        json.photoUrl default_url
+      end
     end
   end
  end
