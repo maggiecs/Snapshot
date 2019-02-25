@@ -4,7 +4,11 @@
     json.set! post.id do
       json.extract! post, :id, :body, :author_id, :created_at, :comment_ids
       json.liker_ids post.likers.pluck(:id)
-      json.photoUrl url_for(post.photo)
+      if post.author.photo.attached?
+        json.photoUrl url_for(post.photo)
+       else
+       json.photoUrl default_url
+      end
     end
   end
 
