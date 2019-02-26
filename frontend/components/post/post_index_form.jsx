@@ -92,7 +92,6 @@ class PostIndex extends React.Component {
         <div className="post-index-images">
         {indexPosts}
         </div>
-        <Footer />
       </div> 
     
     );

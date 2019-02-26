@@ -33,8 +33,7 @@ class Follower extends React.Component {
                   to={`/users/${userFollower.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollower.username}</p>
                 </Link>
-                {followButton}
-                {/* <button className="user-submit" onClick={() => this.props.createFollow({ followee_id: userFollower.id, follower_id: this.props.currentUser.id })}>Follow</button> */}
+                <button className="user-submit" onClick={() => this.props.createFollow({ followee_id: userFollower.id, follower_id: this.props.currentUser.id })}>Follow</button>
               </li>
             );
           } else {
@@ -45,7 +44,7 @@ class Follower extends React.Component {
                   to={`/users/${userFollower.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollower.username}</p>
                 </Link>
-                {/* <button className="user-submit" onClick={() => this.props.deleteFollow(currentUser.id, userFollower.id)}>Following</button> */}
+                <button className="user-submit" onClick={() => this.props.deleteFollow(currentUser.id, userFollower.id)}>Following</button>
               </li>
             );
           }

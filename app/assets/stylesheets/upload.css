@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  width: 400px;
 }
 
 
@@ -19,6 +19,10 @@
   font-size: 20px;
 }
 
+
+.upload-post-file:active {
+  color: #7bacda;
+}
 .upload-file {
   display: none;
 }
@@ -51,11 +55,18 @@
   border: 1px solid #e6e6e6;
   padding: 15px;
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
 }
 
 .upload-submit-button {
   text-align: center;
 }
+
+.upload-submit-button input[type="submit"]:active {
+  color: #7bacda;
+}
+
 .upload-submit-button input[type="submit"] {
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
