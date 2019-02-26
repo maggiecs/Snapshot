@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../footer/footer';
 
 class UploadForm extends React.Component {
   constructor(props) {
@@ -72,6 +73,7 @@ class UploadForm extends React.Component {
             <input type="submit" value="Share" />
           </div>
         </form>
+        <Footer />
       </div>
     );
   }
