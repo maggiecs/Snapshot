@@ -15,6 +15,8 @@ class Explore extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    
     this.props.clearPrevPosts();
     this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
     this.props.fetchUsers({ notFollowing: true });

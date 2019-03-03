@@ -14,6 +14,7 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.clearPrevPosts();
     this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
     window.addEventListener('scroll', this.handleScroll);

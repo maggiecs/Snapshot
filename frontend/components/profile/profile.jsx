@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     let user = this.props.user;
     let currentUser = this.props.currentUser;
 
