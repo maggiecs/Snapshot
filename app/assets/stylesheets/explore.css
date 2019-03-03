@@ -20,3 +20,75 @@
   flex-wrap: wrap;
   min-height: 400px;
 }
+
+.explore-user-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 965px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+.explore-user-container::-webkit-scrollbar  {
+  display: none;
+}
+
+.discover-user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  width: 160px;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  margin: 15px;
+}
+
+.discover-user-img > img {
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.discover-user-username {
+  font-weight: 500;
+  font-family: Roboto, "sans-serif";
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.follow-button {
+  background-color: #3897f0;
+  border-radius: 5px;
+  border: 1px solid #3897f0;
+  margin: 0px auto;
+  padding: 7px 10px;
+  color: #ffffff;
+  text-align: center; 
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.following-button {
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  margin: 0px auto;
+  padding: 7px 10px;
+  color: #000000;
+  text-align: center; 
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}

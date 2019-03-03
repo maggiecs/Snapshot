@@ -13,6 +13,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, action.currentUser.users );
     case RECEIVE_USERS:
+      return action.users;
     case RECEIVE_SEARCHED_USERS:
       return merge({}, state, action.users);
     case RECEIVE_USER:

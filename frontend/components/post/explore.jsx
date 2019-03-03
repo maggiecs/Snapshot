@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfilePostItem from '../profile/profile_post_item';
 import Footer from '../footer/footer';
+import { Link } from 'react-router-dom';
 
 class Explore extends React.Component {
   constructor(props) {
@@ -48,38 +49,44 @@ class Explore extends React.Component {
   renderFollow(user) {
     let currentUser = this.props.currentUser;
     if (user.id !== currentUser.id && user.follower_ids && !(user.follower_ids.includes(currentUser.id))) {
-      return <button onClick={() => this.props.createFollow({ followee_id: this.props.user.id, follower_id: this.props.currentUser.id })}>Follow</button>
+      return <button className="follow-button" onClick={() => this.props.createFollow({ followee_id: user.id, follower_id: currentUser.id })}>Follow</button>
     } else {
-      return <button onClick={() => this.props.deleteFollow(currentUser.id, user.id)}>Following</button>
+      return <button className="following-button" onClick={() => this.props.deleteFollow(currentUser.id, user.id)}>Following</button>
     }
   }
 
 
   render() {
-    let that = this;
-    let explorePosts = that.props.post_ids.map(post_id => {
+    const that = this;
+    const explorePosts = that.props.post_ids.map(post_id => {
       if (that.props.posts[post_id] && that.props.posts[post_id].liker_ids) {
         return <ProfilePostItem key={post_id} post_id={post_id} posts={that.props.posts} openPostModal={() => that.props.openPostModal(post_id)} />;
       }
     }).reverse();
   
-    let omitted_ids = this.props.currentUser.followee_ids.concat(this.props.currentUser.id)
-   
-    let unfollowedIds = that.props.user_ids.filter(id => !omitted_ids.includes(id))
-    let discoverUsers = unfollowedIds.map(user_id => {
+    const unfollowedIds = this.props.user_ids.filter(id => id !== this.props.currentUser.id);
+    const discoverUsers = unfollowedIds.map(user_id => {
       return (
         <div key={user_id} className="discover-user">
-          <p>{that.props.users[user_id].username}</p>
+          <Link to={`/users/${user_id}`}
+          className="discover-user-img">
           <img src={that.props.users[user_id].photoUrl} alt="" />
+          </Link>
+          <Link to={`/users/${user_id}`}
+          className="discover-user-username">
+          <p>{that.props.users[user_id].username}</p>
+          </Link>
+          {this.renderFollow(that.props.users[user_id])}
         </div>
       );
     });
 
     return (
       <div className="explore-container">
-        {/* <div className="explore-user-container">
+        <h2 className="explore-title">Discover People</h2>
+        <div className="explore-user-container">
           {discoverUsers}
-        </div> */}
+        </div>
         <h2 className="explore-title">Explore</h2>
         <ul className="explore-photos">
           {explorePosts}
