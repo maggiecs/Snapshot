@@ -34,6 +34,7 @@
   height: 30px;
   border-radius: 50%;
   padding: 10px;
+  object-fit: cover;
 }
 
 .follow-item-username {

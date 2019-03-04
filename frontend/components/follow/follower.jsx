@@ -10,6 +10,22 @@ class Follower extends React.Component {
     this.props.fetchFollowerFollows(this.props.user.id, "followers");
   }
 
+  renderFollowerButton(userFollower) {
+    if (userFollower.id !== this.props.currentUser.id) {
+      return (
+        <button className="follow-button" onClick={() => this.props.createFollow({ followee_id: userFollower.id, follower_id: this.props.currentUser.id })}>Follow</button>
+      );
+    }
+  }
+
+  renderFollowingButton(userFollower) {
+    if (userFollower.id !== this.props.currentUser.id) {
+      return (
+        <button className="following-button" onClick={() => this.props.deleteFollow(this.props.currentUser.id, userFollower.id)}>Following</button>
+      );
+    }
+  }
+
   render() {
     let userFollowers;
     let user = this.props.user;
@@ -18,12 +34,6 @@ class Follower extends React.Component {
     if (user.follower_ids) {
       userFollowers = user.follower_ids.map(follower_id => {
         let userFollower = users[follower_id];
-
-        // if (follower_id !== this.props.currentUser.id) {
-        //   let followButton = <button className="user-submit" onClick={() => this.props.createFollow({ followee_id: userFollower.id, follower_id: this.props.currentUser.id })}>Follow</button>;
-        //   let followingButton = <button className="user-submit" onClick={() => this.props.deleteFollow(currentUser.id, userFollower.id)}>Following</button>
-        // }
-
         if (userFollower && userFollower.follower_ids ) {
           if (!userFollower.follower_ids.includes(currentUser.id)) {
             return (
@@ -33,7 +43,7 @@ class Follower extends React.Component {
                   to={`/users/${userFollower.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollower.username}</p>
                 </Link>
-                <button className="user-submit" onClick={() => this.props.createFollow({ followee_id: userFollower.id, follower_id: this.props.currentUser.id })}>Follow</button>
+                {this.renderFollowerButton(userFollower)}
               </li>
             );
           } else {
@@ -44,7 +54,7 @@ class Follower extends React.Component {
                   to={`/users/${userFollower.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollower.username}</p>
                 </Link>
-                <button className="user-submit" onClick={() => this.props.deleteFollow(currentUser.id, userFollower.id)}>Following</button>
+                {this.renderFollowingButton(userFollower)}
               </li>
             );
           }

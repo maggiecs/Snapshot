@@ -10,6 +10,22 @@ class Following extends React.Component {
     this.props.fetchFolloweeFollows(this.props.user.id, "followees");
   }
 
+  renderFollowerButton(userFollowee) {
+    if (userFollowee.id !== this.props.currentUser.id) {
+      return (
+        <button className="follow-button" onClick={() => this.props.createFollow({ followee_id: userFollowee.id, follower_id: this.props.currentUser.id })}>Follow</button>
+      );
+    }
+  }
+
+  renderFollowingButton(userFollowee) {
+    if (userFollowee.id !== this.props.currentUser.id) {
+      return (
+        <button className="following-button" onClick={() => this.props.deleteFollow(this.props.currentUser.id, userFollowee.id)}>Following</button>
+      );
+    }
+  }
+
   render() {
     let userFollowings;
     let user = this.props.user;
@@ -27,7 +43,7 @@ class Following extends React.Component {
                   to={`/users/${userFollowee.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollowee.username}</p>
                 </Link>
-                <button className="user-submit" onClick={() => this.props.createFollow({ followee_id: userFollowee.id, follower_id: this.props.currentUser.id })}>Follow</button>
+                {this.renderFollowerButton(userFollowee)}
               </div>
             );
           } else {
@@ -38,7 +54,7 @@ class Following extends React.Component {
                   to={`/users/${userFollowee.id}`} onClick={() => this.props.closeModal()}>
                   <p>{userFollowee.username}</p>
                 </Link>
-                <button className="user-submit" onClick={() => this.props.deleteFollow(currentUser.id, userFollowee.id)}>Following</button>
+                {this.renderFollowingButton(userFollowee)}
               </div>
             );
           }
