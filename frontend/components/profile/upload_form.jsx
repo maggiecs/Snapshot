@@ -35,7 +35,6 @@ class UploadForm extends React.Component {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-
       this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
 
@@ -70,7 +69,7 @@ class UploadForm extends React.Component {
               placeholder="Write a caption..."></textarea>
           </div>
           <div className="upload-submit-button">
-            <input type="submit" value="Share" />
+            <input type="submit" value="Share" disabled={!this.state.photoUrl} />
           </div>
         </form>
         <Footer />
