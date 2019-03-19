@@ -19,25 +19,6 @@ class PostIndex extends React.Component {
     this.props.fetchPosts(this.state.limit, this.state.offset, this.props.feed);
     window.addEventListener('scroll', this.handleScroll);
 
-    // window.onscroll = scrollFunction;
-
-    // const el = document.querySelector('.logo-name');
-    // const el2 = document.querySelector('.logo-separator');
-
-    //   function scrollFunction() {
-    //     let windowY = window.scrollY;
-    //     if (windowY < 100) {
-    //       el.classList.add('show');
-    //       el2.classList.add('show');
-    //       el.classList.remove('hide');
-    //       el2.classList.remove('hide');
-    //     } else {
-    //       el.classList.add('hide');
-    //       el2.classList.add('hide');
-    //       el.classList.remove('show');
-    //       el2.classList.remove('show');
-    //     }
-    //   }
   }
 
   componentWillUnmount() {

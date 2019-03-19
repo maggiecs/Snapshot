@@ -6,6 +6,8 @@ import { openModal } from '../../actions/modal_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
 
 const msp = (state) => {
+  let users = state.entities.users;
+  
   return {
     users: state.entities.users,
     user_ids: Object.keys(state.entities.users).map(Number),
