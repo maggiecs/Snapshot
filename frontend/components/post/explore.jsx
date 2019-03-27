@@ -59,7 +59,6 @@ class Explore extends React.Component {
 
 
   render() {
-    debugger
     const that = this;
     const explorePosts = that.props.post_ids.map(post_id => {
       if (that.props.posts[post_id] && that.props.posts[post_id].liker_ids) {

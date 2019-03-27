@@ -22,8 +22,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER_POSTS:
     case RECEIVE_ALL_POSTS:
       return merge({}, state, action.payload.users);
-    // case RECEIVE_POST_COMMENTS:
-    //   return merge({},state, action.payload.users);
     case REMOVE_POST:
       let userId = action.userId;
       let postIdsArray = newState[userId].post_ids;
@@ -43,8 +41,6 @@ const usersReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_FOLLOWS:
       return merge({}, state, action.follows.users);
-    // case RECEIVE_USER_POSTS:
-    //   return merge({}, state, action.payload.users);
     case LOGOUT_CURRENT_USER:
       return {};
     default:
