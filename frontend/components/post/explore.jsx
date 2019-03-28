@@ -68,19 +68,21 @@ class Explore extends React.Component {
   
     const unfollowedIds = this.props.user_ids.filter(id => id !== this.props.currentUser.id);
     const discoverUsers = unfollowedIds.map(user_id => {
-      return (
-        <div key={user_id} className="discover-user">
-          <Link to={`/users/${user_id}`}
-          className="discover-user-img">
-          <img src={that.props.users[user_id].photoUrl} alt="" />
-          </Link>
-          <Link to={`/users/${user_id}`}
-          className="discover-user-username">
-          <p>{that.props.users[user_id].username}</p>
-          </Link>
-          {this.renderFollow(that.props.users[user_id])}
-        </div>
-      );
+      if (that.props.users[user_id]) {
+        return (
+          <div key={user_id} className="discover-user">
+            <Link to={`/users/${user_id}`}
+            className="discover-user-img">
+            <img src={that.props.users[user_id].photoUrl} alt="" />
+            </Link>
+            <Link to={`/users/${user_id}`}
+            className="discover-user-username">
+            <p>{that.props.users[user_id].username}</p>
+            </Link>
+            {this.renderFollow(that.props.users[user_id])}
+          </div>
+        );
+      };
     });
 
     return (
